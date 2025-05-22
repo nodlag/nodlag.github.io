@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier Garrido – Creating Games with Code, Feel & FX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'PixelFont1';
+            src: url('fonts/pixel_font_01.ttf') format('truetype');
+        }
+
+        .animated-title {
+            display: inline-block;
+        }
+
+        .animated-title span {
+            display: inline-block;
+            font-family: 'PixelFont1', 'Pixelify Sans', cursive;
+            animation: vibrate 0.6s infinite;
+            font-size: 1.4em;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: none;
+            text-rendering: optimizeSpeed;
+        }
+
+        @keyframes vibrate {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(0.5px, 0.5px) rotate(0.5deg);
+            }
+            50% {
+                transform: translate(-0.5px, -0.5px) rotate(-0.5deg);
+            }
+            75% {
+                transform: translate(-0.5px, 0.5px) rotate(0.5deg);
+            }
+            100% {
+                transform: translate(0.5px, -1px) rotate(-0.5deg);
+            }
+        }
+
+        body.font-pixelify {
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: none;
+            text-rendering: optimizeSpeed;
+            font-size: 1.2em;
+        }
+
+        /* Base text colors for dark mode */
+        .dark h2, .dark p {
+            color: #cecece;
+        }
+
+        .section-title {
+            @apply text-2xl font-bold mb-6 text-center w-full;
+        }
+        .dark .section-title {
+            color: #cecece;
+        }
+
+        .project-card {
+            @apply bg-white dark:bg-gray-800 shadow-lg p-6 cursor-pointer;
+        }
+
+        .project-title {
+            @apply text-2xl font-bold mb-4;
+        }
+        .dark .project-title {
+            color: #cecece;
+        }
+
+        .project-description {
+            @apply text-lg;
+        }
+        .dark .project-description {
+            color: #cecece;
+        }
+
+        .project-detail-title {
+            @apply text-xl font-bold mb-4;
+        }
+        .dark .project-detail-title {
+            color: #cecece;
+        }
+
+        .project-detail-description {
+            @apply mb-4 text-lg;
+        }
+        .dark .project-detail-description {
+            color: #cecece;
+        }
+
+        .header-description {
+            @apply text-lg leading-relaxed mb-8;
+        }
+        .dark .header-description {
+            color: #cecece;
+        }
+
+        .technology-name {
+            @apply text-xl font-bold mb-2;
+        }
+        .dark .technology-name {
+            color: #cecece;
+        }
+
+        .technology-level {
+            @apply text-lg;
+        }
+        .dark .technology-level {
+            color: #cecece;
+        }
+
+        .footer-project-title {
+            @apply text-xl font-bold mb-2;
+        }
+        .dark .footer-project-title {
+            color: #cecece;
+        }
+
+        .footer-project-description {
+            @apply text-lg;
+        }
+        .dark .footer-project-description {
+            color: #cecece;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                    },
+                    fontFamily: {
+                        'pixelify': ['"Pixelify Sans"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-200 font-pixelify">
+    <!-- Image Viewer Modal -->
+    <div id="imageViewer" class="image-viewer-modal">
+        <div class="image-viewer-content">
+            <span class="image-viewer-close">&times;</span>
+            <img id="viewerImage" class="image-viewer-image" src="" alt="Full size image">
+            <div class="image-viewer-nav">
+                <button id="prevImage">&lt;</button>
+                <button id="nextImage">&gt;</button>
+            </div>
+            <div class="image-viewer-counter">
+                <span id="currentImageIndex">1</span> / <span id="totalImages">3</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Hi! I'm Javi</h1>
+                <div class="flex items-center gap-4">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/javier-garrido-galdón-3811b326" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/nodlag" target="_blank" class="social-link" aria-label="Twitter">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <button id="fontToggle" class="p-2 bg-gray-200" aria-label="Toggle Font">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                    <button id="themeToggle" class="p-2 bg-gray-200">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Description and Technologies Section -->
+        <section class="header-section">
+            <div class="container mx-auto px-4">
+                <p class="header-description">
+                    Hi! I'm Javier Garrido, a <b>game developer</b> with a passion for creating memorable experiences through smooth controls, satisfying feedback, and all those little details that make a game feel just right. I specialize in Unity and Godot, and I love bringing ideas to life with a strong focus on game feel and polish. Whether it's making a jump feel snappy or fine-tuning a particle effect, I'm all about those finishing touches that players remember—even if they don't realize why.
+                </p>
+
+                <div class="technologies-section">
+                    <h2 class="section-title">Main Skills</h2>
+                    <div class="technologies-grid">
+                        <!-- Unity -->
+                        <div class="technology-card">
+                            <img src="images/skills/unity_engine_light.png" alt="Unity Engine" class="technology-icon block dark:hidden">
+                            <img src="images/skills/unity_engine_dark.png" alt="Unity Engine" class="technology-icon hidden dark:block">
+                            <h3 class="technology-name">Unity</h3>
+                            <p class="technology-level" data-start-date="2013">+ <span class="years-experience">0</span> Years</p>
+                        </div>
+
+                        <!-- Godot Engine -->
+                        <div class="technology-card">
+                            <img src="images/skills/godot_engine_light.png" alt="Godot Engine" class="technology-icon block dark:hidden">
+                            <img src="images/skills/godot_engine_dark.png" alt="Godot Engine" class="technology-icon hidden dark:block">
+                            <h3 class="technology-name">Godot Engine</h3>
+                            <p class="technology-level" data-start-date="2022">+ <span class="years-experience">0</span> Years</p>
+                        </div>
+
+                        <!-- C# -->
+                        <div class="technology-card">
+                            <img src="images/skills/c_sharp_light.png" alt="C#" class="technology-icon block dark:hidden">
+                            <img src="images/skills/c_sharp_dark.png" alt="C#" class="technology-icon hidden dark:block">
+                            <h3 class="technology-name">C#</h3>
+                            <p class="technology-level" data-start-date="2009">+ <span class="years-experience">0</span> Years</p>
+                        </div>
+
+                        <!-- Game Design -->
+                        <div class="technology-card">
+                            <img src="images/skills/game_design_light.png" alt="Game Design" class="technology-icon block dark:hidden">
+                            <img src="images/skills/game_design_dark.png" alt="Game Design" class="technology-icon hidden dark:block">
+                            <h3 class="technology-name">Game Design</h3>
+                            <p class="technology-level" data-start-date="2011">+ <span class="years-experience">0</span> Years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main>
+            <div class="container mx-auto px-4">
+                <div class="projects-section w-full">
+                    <h2 class="section-title">PROJECTS</h2>
+                </div>
+                <div class="timeline-path">
+                    <!-- Portfolio Items -->
+                    <div class="relative">
+                        <div class="md:w-1/2 md:ml-auto md:pl-8 p-4">
+                            <div class="project-card" onclick="toggleDetails('project1')">
+                                <h2 class="project-title">Laika: Aged Through Blood</h2>
+                                <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood">
+                                
+                                <div id="project1" class="project-details">
+                                    <div class="mt-6">
+                                        <p class="project-detail-description">Laika: Aged Through Blood is an action-adventure Metroidvania set in a post-apocalyptic western world. Play as Laika, a coyote mother and fierce warrior, and carve your motorbike through a land ravaged by betrayal and loss as you uncover dark secrets in the pursuit of vengeance against oppression.</p>
+                                        <p>&nbsp;</p>
+                                        <p class="project-detail-description">I was responsible for porting the Steam version of the game to Nintendo Switch, working closely with the original development team to technically adapt the project and tweak several mechanics to fit the specific requirements of the Nintendo Switch platform.</p>
+                                        
+                                        <!--
+                                        <div class="project-gallery" data-project="project2">
+                                            <img src="images/project2-1.jpg" alt="Project 2 Screenshot 1" onclick="openImageViewer(this, 'project2')">
+                                            <img src="images/project2-2.jpg" alt="Project 2 Screenshot 2" onclick="openImageViewer(this, 'project2')">
+                                            <img src="images/project2-3.jpg" alt="Project 2 Screenshot 3" onclick="openImageViewer(this, 'project2')">
+                                        </div>
+                                        -->
+
+                                        <div class="project-video">
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HHJjbt-dwNE?si=XgRpqg06nj-_Kodm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        
+                                        <a href="https://store.steampowered.com/app/1796220/Laika_Aged_Through_Blood" class="steam-link" target="_blank">
+                                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 21.6c-5.3 0-9.6-4.3-9.6-9.6S6.7 2.4 12 2.4s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z"/>
+                                            </svg>
+                                            View on Steam
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="md:w-1/2 md:mr-auto md:pr-8 p-4">
+                            <div class="project-card" onclick="toggleDetails('project2')">
+                                <h2 class="project-title">Tiny Garden</h2>
+                                <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden">
+                                
+                                <div id="project2" class="project-details">
+                                    <div class="mt-6">
+                                        <p class="project-detail-description">Tiny Garden lets you grow a pocket-sized garden inside a magical toy passed down through generations. Nurture plants, trade them for furniture, and customize your space in this relaxing mix of farming, puzzles, and strategy. No scores or time limits — let your creativity bloom!</p>
+                                        <p>&nbsp;</p>
+                                        <p class="project-detail-description">I served as the Technical Artist for the game, where I designed and implemented all VFX and animations, blending technical execution with creative vision to enrich the game’s atmosphere.</p>
+
+                                        <!--
+                                        <div class="project-gallery" data-project="project2">
+                                            <img src="images/project2-1.jpg" alt="Project 2 Screenshot 1" onclick="openImageViewer(this, 'project2')">
+                                            <img src="images/project2-2.jpg" alt="Project 2 Screenshot 2" onclick="openImageViewer(this, 'project2')">
+                                            <img src="images/project2-3.jpg" alt="Project 2 Screenshot 3" onclick="openImageViewer(this, 'project2')">
+                                        </div>
+                                        -->
+                                        
+                                        <div class="project-video">
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yVig9KKjK10?si=4W47JYVZy4QNqe4N" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        
+                                        <a href="https://store.steampowered.com/app/2812450/Tiny_Garden" class="steam-link" target="_blank">
+                                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 21.6c-5.3 0-9.6-4.3-9.6-9.6S6.7 2.4 12 2.4s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z"/>
+                                            </svg>
+                                            View on Steam
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="md:w-1/2 md:ml-auto md:pl-8 p-4">
+                            <div class="project-card" onclick="toggleDetails('project3')">
+                                <h2 class="project-title">Cannibal Crossing</h2>
+                                <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing">
+                                
+                                <div id="project3" class="project-details">
+                                    <div class="mt-6">
+                                        <p class="project-detail-description">Cannibal Crossing is an action-survival game where you explore the randomly generated town of Earlsboro while scavenging, fighting hordes of enemies, building a base, and searching for a way to escape! Meet survivors with new abilities and lots of cannibals. Includes a co-op mode for 1-4 players!</p>
+                                        <p>&nbsp;</p>
+                                        <p class="project-detail-description">I was involved in the original development of the game, playing a hands-on role in core areas like design, programming, feel, and VFX, helping shape the game’s identity from the ground up.</p>
+
+                                        <!--
+                                        <div class="project-gallery" data-project="project3">
+                                            <img src="images/project3-1.jpg" alt="Project 3 Screenshot 1" onclick="openImageViewer(this, 'project3')">
+                                            <img src="images/project3-2.jpg" alt="Project 3 Screenshot 2" onclick="openImageViewer(this, 'project3')">
+                                            <img src="images/project3-3.jpg" alt="Project 3 Screenshot 3" onclick="openImageViewer(this, 'project3')">
+                                        </div>
+                                        -->
+                                        
+                                        <div class="project-video">
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_JycN5zJCM0?si=5wFbGny4iKiwn1eA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        
+                                        <a href="https://store.steampowered.com/app/1304090/Cannibal_Crossing" class="steam-link" target="_blank">
+                                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 21.6c-5.3 0-9.6-4.3-9.6-9.6S6.7 2.4 12 2.4s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z"/>
+                                            </svg>
+                                            View on Steam
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Other Projects Description Section -->
+    <section class="header-section">
+        <div class="container mx-auto px-4">
+            <div class="technologies-section">
+                <h2 class="section-title">More! More! More!</h2>
+            </div>
+            <p class="header-description">
+                I've been making games professionally since 2011, working on more than 20 titles and collaborating with major publishers like Chillingo (Electronic Arts), Noodlecake, and Re-Logic. Over the years, I've had the chance to contribute to some amazing projects, and a couple of them were even recognized by Apple as "Game of the Week"—twice! It's been a wild and rewarding journey, and I'm always looking forward to the next creative challenge.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script></p>
+    </footer>
+
+    <script>
+        // Theme detection and toggle
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Check for saved theme preference or use system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Theme toggle functionality
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+
+        // Font toggle functionality
+        const fontToggle = document.getElementById('fontToggle');
+        
+        function wrapLettersInSpans(element) {
+            const text = element.textContent;
+            element.textContent = '';
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i];
+                if (text[i] === ' ') {
+                    span.style.marginRight = '0.25em';
+                }
+                span.style.animationDelay = `${i * 0.05}s`;
+                element.appendChild(span);
+            }
+        }
+
+        function updateTitleFonts() {
+            const titles = document.querySelectorAll('h1, h2, h3');
+            if (document.body.classList.contains('font-pixelify')) {
+                titles.forEach(title => {
+                    if (!title.classList.contains('animated-title')) {
+                        title.classList.add('animated-title');
+                        wrapLettersInSpans(title);
+                    }
+                });
+            } else {
+                titles.forEach(title => {
+                    if (title.classList.contains('animated-title')) {
+                        title.classList.remove('animated-title');
+                        const text = Array.from(title.childNodes)
+                            .map(node => node.textContent)
+                            .join('');
+                        title.textContent = text;
+                    }
+                });
+            }
+        }
+        
+        // Check for saved font preference
+        if (localStorage.font === 'default' || (!('font' in localStorage) && !document.body.classList.contains('font-pixelify'))) {
+            document.body.classList.remove('font-pixelify');
+        } else {
+            document.body.classList.add('font-pixelify');
+        }
+        updateTitleFonts();
+
+        // Font toggle functionality
+        fontToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('font-pixelify')) {
+                document.body.classList.remove('font-pixelify');
+                localStorage.font = 'default';
+            } else {
+                document.body.classList.add('font-pixelify');
+                localStorage.font = 'pixelify';
+            }
+            updateTitleFonts();
+        });
+
+        // Project details toggle
+        function toggleDetails(projectId) {
+            const details = document.getElementById(projectId);
+            details.classList.toggle('active');
+        }
+
+        // Image Viewer functionality
+        let currentProject = null;
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        function openImageViewer(img, projectId) {
+            event.stopPropagation(); // Prevent project details from toggling
+            currentProject = projectId;
+            const gallery = document.querySelector(`.project-gallery[data-project="${projectId}"]`);
+            currentImages = Array.from(gallery.getElementsByTagName('img'));
+            currentImageIndex = currentImages.indexOf(img);
+            
+            updateImageViewer();
+            document.getElementById('imageViewer').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateImageViewer() {
+            const viewer = document.getElementById('imageViewer');
+            const viewerImage = document.getElementById('viewerImage');
+            const currentIndex = document.getElementById('currentImageIndex');
+            const totalImages = document.getElementById('totalImages');
+            
+            viewerImage.src = currentImages[currentImageIndex].src;
+            currentIndex.textContent = currentImageIndex + 1;
+            totalImages.textContent = currentImages.length;
+        }
+
+        function closeImageViewer() {
+            document.getElementById('imageViewer').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
+            updateImageViewer();
+        }
+
+        // Event Listeners
+        document.querySelector('.image-viewer-close').addEventListener('click', closeImageViewer);
+        document.getElementById('prevImage').addEventListener('click', () => navigateImage(-1));
+        document.getElementById('nextImage').addEventListener('click', () => navigateImage(1));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('imageViewer').classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeImageViewer();
+                    break;
+                case 'ArrowLeft':
+                    navigateImage(-1);
+                    break;
+                case 'ArrowRight':
+                    navigateImage(1);
+                    break;
+            }
+        });
+
+        // Close on click outside image
+        document.getElementById('imageViewer').addEventListener('click', (e) => {
+            if (e.target.id === 'imageViewer') {
+                closeImageViewer();
+            }
+        });
+
+        // Calculate years of experience
+        function updateYearsOfExperience() {
+            const currentYear = new Date().getFullYear();
+            const technologyLevels = document.querySelectorAll('.technology-level');
+            
+            technologyLevels.forEach(level => {
+                const startDate = parseInt(level.getAttribute('data-start-date'));
+                const yearsExperience = currentYear - startDate;
+                level.querySelector('.years-experience').textContent = yearsExperience;
+            });
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', updateYearsOfExperience);
+    </script>
+</body>
+</html> 
