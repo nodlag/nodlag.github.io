@@ -45,6 +45,18 @@ h2{
     }
 }
 
+/* Update project card styles for grid layout */
+.project-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 0.75rem;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    max-width: 500px;
+}
+
 /* Project details styling */
 .project-gallery {
     display: grid;
@@ -57,7 +69,6 @@ h2{
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 0;
 }
 
 .project-video {
@@ -73,19 +84,12 @@ h2{
     padding: 0.5rem 1rem;
     background-color: #171a21;
     color: white;
-    border-radius: 0;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .steam-link:hover {
     background-color: #2a3f5f;
-}
-
-/* Header and Description Section */
-.header-section {
-    text-align: center;
-    padding: 2rem 0 4rem;
 }
 
 .header-description {
@@ -101,7 +105,7 @@ h2{
 }
 
 .technologies-section {
-    margin: 3rem auto;
+    margin: 1rem auto;
     max-width: 1000px;
 }
 
@@ -114,11 +118,9 @@ h2{
 
 .technology-card {
     background-color: white;
-    border-radius: 0;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .dark .technology-card {
@@ -135,7 +137,6 @@ h2{
 
 .technology-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .technology-icon {
@@ -194,9 +195,7 @@ h2{
 
 .footer-project-card {
     background-color: white;
-    border-radius: 0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     cursor: pointer;
     overflow: hidden;
 }
@@ -207,7 +206,6 @@ h2{
 
 .footer-project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .footer-project-image {
@@ -232,13 +230,13 @@ h2{
 }
 
 .footer-project-description {
-    color: #4a5568;
+    color: #4b5563;
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
 .dark .footer-project-description {
-    color: #a0aec0;
+    color: #cecece;
 }
 
 /* Image Viewer Modal */
@@ -302,7 +300,6 @@ h2{
     color: white;
     padding: 15px;
     cursor: pointer;
-    border-radius: 0;
     transition: background-color 0.3s ease;
 }
 
@@ -319,7 +316,6 @@ h2{
     font-size: 16px;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 15px;
-    border-radius: 0;
 }
 
 .project-gallery img {
@@ -364,9 +360,7 @@ h2{
 /* Common Card Styles */
 .card-base {
     background-color: white;
-    border-radius: 0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .dark .card-base {
@@ -375,25 +369,26 @@ h2{
 
 .card-base:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Project Card */
 .project-card {
-    @apply card-base;
+    transition: transform 0.3s ease;
     padding: 1.5rem;
 }
 
 /* Technology Card */
 .technology-card {
-    @apply card-base;
+    background-color: white;
+    transition: transform 0.3s ease;
     padding: 1.5rem;
     text-align: center;
 }
 
 /* Footer Project Card */
 .footer-project-card {
-    @apply card-base;
+    background-color: white;
+    transition: transform 0.3s ease;
     cursor: pointer;
     overflow: hidden;
 }
@@ -429,13 +424,15 @@ h2{
 
 /* Header Section */
 .header-section {
-    @apply section-base;
-    padding-bottom: 4rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 /* Footer Section */
 .footer-projects {
-    @apply section-base;
+    padding: 2rem 0;
+    text-align: center;
     background-color: #f8fafc;
     margin-top: 4rem;
 }
@@ -518,4 +515,154 @@ h2{
 
 .projects-section {
     text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Grid Layout - Redesigned */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0.75rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    justify-items: center;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Update project card styles for grid layout - Image Priority */
+.project-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 0;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image styles - Full visibility priority */
+.project-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0.25rem 0;
+    border-radius: 0;
+    background-color: #f8f9fa;
+}
+
+.dark .project-card img {
+    background-color: #374151;
+}
+
+/* Title styling - Compact */
+.project-title {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Project details - Compact spacing */
+.project-details {
+    margin-top: 0.5rem;
+}
+
+.project-detail-description {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Video container - Maintain aspect ratio */
+.project-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin: 0.75rem 0;
+}
+
+/* Steam link - Compact */
+.steam-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background-color: #171a21;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.steam-link:hover {
+    background-color: #2a3f5f;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+    .project-card {
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+    
+    .project-card img {
+        margin: 0.125rem 0;
+    }
+    
+    .project-title {
+        font-size: 1rem;
+        margin: 0.25rem 0;
+    }
+    
+    .project-detail-description {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-video {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Section title spacing */
+.projects-section {
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+}
+
+.project-detail-toggle{
+    color: #4b5563;
 }
