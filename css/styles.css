@@ -1,3 +1,41 @@
+/* CSS Variables for Colors */
+:root {
+    /* Light theme colors */
+    --color-primary: #3B82F6;
+    --color-primary-hover: #60A5FA;
+    
+    /* Background colors */
+    --bg-light-main: #f8f9fa;
+    --bg-light-card: #ffffff;
+    --bg-light-section: #f8fafc;
+    --bg-light-steam: #171a21;
+    --bg-light-steam-hover: #2a3f5f;
+    
+    /* Text colors light theme */
+    --text-light-primary: #1f2937;
+    --text-light-secondary: #4a5568;
+    --text-light-tertiary: #4b5563;
+    --text-light-dark: #2d3748;
+    --text-light-footer: #1a202c;
+    
+    /* Dark theme backgrounds */
+    --bg-dark-main: #374151;
+    --bg-dark-card: #1E1E1E;
+    --bg-dark-section: #1a1a1a;
+    --bg-dark-footer: #2d3748;
+    
+    /* Text colors dark theme */
+    --text-dark-primary: #cecece;
+    --text-dark-secondary: #a0aec0;
+    --text-dark-light: #f7fafc;
+    
+    /* Modal and overlay colors */
+    --overlay-dark: rgba(0, 0, 0, 0.9);
+    --overlay-light: rgba(0, 0, 0, 0.5);
+    --overlay-button: rgba(255, 255, 255, 0.1);
+    --overlay-button-hover: rgba(255, 255, 255, 0.2);
+}
+
 h2 {
     font-weight: bold !important;
 }
@@ -38,11 +76,11 @@ h2 {
     object-fit: contain;
     margin: 0.25rem 0;
     border-radius: 0;
-    background-color: #f8f9fa;
+    background-color: var(--bg-light-main);
 }
 
 .dark .project-card img {
-    background-color: #374151;
+    background-color: var(--bg-dark-main);
 }
 
 /* Title styling - Compact */
@@ -73,7 +111,7 @@ h2 {
     align-items: center;
     gap: 0.25rem;
     padding: 0.375rem 0.75rem;
-    background-color: #171a21;
+    background-color: var(--bg-light-steam);
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -82,7 +120,7 @@ h2 {
 }
 
 .steam-link:hover {
-    background-color: #2a3f5f;
+    background-color: var(--bg-light-steam-hover);
 }
 
 /* Header Description */
@@ -91,11 +129,11 @@ h2 {
     margin: 1.5rem auto;
     font-size: 1.125rem;
     line-height: 1.75;
-    color: #4a5568;
+    color: var(--text-light-secondary);
 }
 
 .dark .header-description {
-    color: #a0aec0;
+    color: var(--text-dark-secondary);
 }
 
 /* Technologies Section */
@@ -112,14 +150,14 @@ h2 {
 }
 
 .technology-card {
-    background-color: white;
+    background-color: var(--bg-light-card);
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 .dark .technology-card {
-    background-color: #1E1E1E;
+    background-color: var(--bg-dark-card);
 }
 
 .technology-card:hover {
@@ -134,32 +172,32 @@ h2 {
 
 .technology-name {
     font-weight: 600;
-    color: #2d3748;
+    color: var(--text-light-dark);
     margin-bottom: 0.5rem;
 }
 
 .dark .technology-name {
-    color: #f7fafc;
+    color: var(--text-dark-light);
 }
 
 .technology-level {
     font-size: 0.875rem;
-    color: #4a5568;
+    color: var(--text-light-secondary);
 }
 
 .dark .technology-level {
-    color: #a0aec0;
+    color: var(--text-dark-secondary);
 }
 
 /* Footer Projects Section */
 .footer-projects {
-    background-color: #f8fafc;
+    background-color: var(--bg-light-section);
     padding: 4rem 0;
     margin-top: 4rem;
 }
 
 .dark .footer-projects {
-    background-color: #1a1a1a;
+    background-color: var(--bg-dark-section);
 }
 
 .footer-projects-container {
@@ -181,14 +219,14 @@ h2 {
 }
 
 .footer-project-card {
-    background-color: white;
+    background-color: var(--bg-light-card);
     transition: transform 0.3s ease;
     cursor: pointer;
     overflow: hidden;
 }
 
 .dark .footer-project-card {
-    background-color: #2d3748;
+    background-color: var(--bg-dark-footer);
 }
 
 .footer-project-card:hover {
@@ -209,21 +247,21 @@ h2 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #1a202c;
+    color: var(--text-light-footer);
 }
 
 .dark .footer-project-title {
-    color: #f7fafc;
+    color: var(--text-dark-light);
 }
 
 .footer-project-description {
-    color: #4b5563;
+    color: var(--text-light-tertiary);
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
 .dark .footer-project-description {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 /* Image Viewer Modal */
@@ -234,7 +272,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--overlay-dark);
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -282,7 +320,7 @@ h2 {
 }
 
 .image-viewer-nav button {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--overlay-button);
     border: none;
     color: white;
     padding: 15px;
@@ -291,7 +329,7 @@ h2 {
 }
 
 .image-viewer-nav button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--overlay-button-hover);
 }
 
 .image-viewer-counter {
@@ -301,7 +339,7 @@ h2 {
     transform: translateX(-50%);
     color: white;
     font-size: 16px;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--overlay-light);
     padding: 5px 15px;
 }
 
@@ -313,21 +351,21 @@ h2 {
 }
 
 .social-link {
-    color: #4a5568;
+    color: var(--text-light-secondary);
     transition: color 0.3s ease;
     padding: 0.5rem;
 }
 
 .dark .social-link {
-    color: #a0aec0;
+    color: var(--text-dark-secondary);
 }
 
 .social-link:hover {
-    color: #3B82F6;
+    color: var(--color-primary);
 }
 
 .dark .social-link:hover {
-    color: #60A5FA;
+    color: var(--color-primary-hover);
 }
 
 .social-icon {
@@ -400,11 +438,11 @@ h2 {
 
 .section-title {
     margin-bottom: 1rem;
-    color: #1f2937;
+    color: var(--text-light-primary);
 }
 
 .dark .section-title {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 .header-section {
@@ -415,25 +453,25 @@ h2 {
 
 /* Dark Mode Text Colors */
 .dark h2, .dark p {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 .dark .project-title {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 .dark .project-detail-description {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 .dark .header-description {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 .dark .technology-level {
-    color: #cecece;
+    color: var(--text-dark-primary);
 }
 
 .dark #fontToggle, .dark #themeToggle {
-    background-color: #1E1E1E;
+    background-color: var(--bg-dark-card);
 }
