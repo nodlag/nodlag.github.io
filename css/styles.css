@@ -1,5 +1,7 @@
 /* CSS Variables for Colors */
 :root {
+    /* Main fonts */
+    --font-main-title: 'Bebas Neue', Arial, Helvetica, sans-serif;
     /* Light theme colors */
     --color-primary: #3B82F6;
     --color-primary-hover: #60A5FA;
@@ -47,9 +49,8 @@
 
 .animated-title span {
     display: inline-block;
-    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    font-family: var(--font-main-title);
     animation: vibrate 0.6s infinite;
-    font-size: 1.4em;
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: none;
     text-rendering: optimizeSpeed;
@@ -57,7 +58,7 @@
 
 /* Default font for titles when not animated */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    font-family: var(--font-main-title);
 }
 
 @keyframes vibrate {
@@ -126,8 +127,6 @@ body.font-pixelify {
 
 /* Project Detail Descriptions */
 .project-detail-description {
-    margin-bottom: 0.5rem;
-    font-size: 1.125rem;
     color: var(--text-light-tertiary);
 }
 
@@ -151,7 +150,7 @@ body.font-pixelify {
 
 /* Technology Levels */
 .technology-level {
-    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    font-family: var(--font-main-title);
     font-size: 1.2rem;
     color: var(--text-light-secondary);
 }
@@ -232,7 +231,7 @@ h2 {
 /* Project details - Compact spacing */
 .project-detail-description {
     margin-bottom: 0.75rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.4;
 }
 
@@ -240,7 +239,8 @@ h2 {
 .project-video {
     width: 100%;
     aspect-ratio: 16/9;
-    margin: 0.75rem 0;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 
 /* Steam link - Compact */
@@ -570,10 +570,6 @@ h2 {
         margin-bottom: 0.5rem;
     }
     
-    .project-video {
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-    }
 }
 
 /* Section Styles */
