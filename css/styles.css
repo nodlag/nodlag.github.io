@@ -8,8 +8,8 @@
     --bg-light-main: #f8f9fa;
     --bg-light-card: #ffffff;
     --bg-light-section: #f8fafc;
-    --bg-light-steam: #171a21;
-    --bg-light-steam-hover: #2a3f5f;
+    --bg-light-steam: #1e1e1e;
+    --bg-light-steam-hover: #5ba1eb;
     --bg-light-button: #e5e7eb;
     
     /* Text colors light theme */
@@ -25,6 +25,8 @@
     --bg-dark-card: #1E1E1E;
     --bg-dark-section: #1a1a1a;
     --bg-dark-footer: #2d3748;
+    --bg-dark-steam: #1e1e1e;
+    --bg-dark-steam-hover: #5ba1eb;
     
     /* Text colors dark theme */
     --text-dark-primary: #cecece;
@@ -259,6 +261,14 @@ h2 {
 
 .steam-link:hover {
     background-color: var(--bg-light-steam-hover);
+}
+
+.dark .steam-link {
+    background-color: var(--bg-dark-steam);
+}
+
+.dark .steam-link:hover {
+    background-color: var(--bg-dark-steam-hover);
 }
 
 /* Header Description */
