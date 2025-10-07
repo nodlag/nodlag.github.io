@@ -53,6 +53,11 @@
     text-rendering: optimizeSpeed;
 }
 
+/* Default font for titles when not animated */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+}
+
 @keyframes vibrate {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -286,10 +291,6 @@ h2 {
 
 .dark .technology-card {
     background-color: var(--bg-dark-card);
-}
-
-.technology-card:hover {
-    transform: translateY(-5px);
 }
 
 .technology-icon {
