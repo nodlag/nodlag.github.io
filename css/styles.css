@@ -167,8 +167,6 @@ body.font-pixelify {
     color: var(--text-light-tertiary);
 }
 
-
-
 h2 {
     font-weight: bold !important;
 }
@@ -200,6 +198,10 @@ h2 {
 
 .project-details.active {
     max-height: 1000px;
+}
+
+.project-card-description{
+    margin-top: 0px;
 }
 
 /* Image styles - Full visibility priority */
@@ -240,8 +242,9 @@ h2 {
 
 /* Steam link - Compact */
 .steam-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.25rem;
     padding: 0.375rem 0.75rem;
     background-color: var(--bg-light-steam);
@@ -249,7 +252,9 @@ h2 {
     text-decoration: none;
     transition: background-color 0.3s ease;
     font-size: 0.875rem;
-    margin-top: 0.5rem;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 .steam-link:hover {
@@ -555,7 +560,8 @@ h2 {
     }
     
     .project-video {
-        margin: 0.5rem 0;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
     }
 }
 
