@@ -10,6 +10,7 @@
     --bg-light-section: #f8fafc;
     --bg-light-steam: #171a21;
     --bg-light-steam-hover: #2a3f5f;
+    --bg-light-button: #e5e7eb;
     
     /* Text colors light theme */
     --text-light-primary: #1f2937;
@@ -17,6 +18,7 @@
     --text-light-tertiary: #4b5563;
     --text-light-dark: #2d3748;
     --text-light-footer: #1a202c;
+    --text-light-white: #ffffff;
     
     /* Dark theme backgrounds */
     --bg-dark-main: #374151;
@@ -35,6 +37,132 @@
     --overlay-button: rgba(255, 255, 255, 0.1);
     --overlay-button-hover: rgba(255, 255, 255, 0.2);
 }
+
+/* Animated Title Styles */
+.animated-title {
+    display: inline-block;
+}
+
+.animated-title span {
+    display: inline-block;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    animation: vibrate 0.6s infinite;
+    font-size: 1.4em;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    text-rendering: optimizeSpeed;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(0.5px, 0.5px) rotate(0.5deg);
+    }
+    50% {
+        transform: translate(-0.5px, -0.5px) rotate(-0.5deg);
+    }
+    75% {
+        transform: translate(-0.5px, 0.5px) rotate(0.5deg);
+    }
+    100% {
+        transform: translate(0.5px, -1px) rotate(-0.5deg);
+    }
+}
+
+/* Font Family for Pixelify Mode */
+body.font-pixelify {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    text-rendering: optimizeSpeed;
+    font-size: 1.2em;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    color: var(--text-light-primary);
+}
+
+/* Project Cards */
+.project-card {
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+/* Project Titles */
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-light-primary);
+}
+
+/* Project Descriptions */
+.project-description {
+    font-size: 1.125rem;
+    color: var(--text-light-tertiary);
+}
+
+/* Project Detail Titles */
+.project-detail-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-light-primary);
+}
+
+/* Project Detail Descriptions */
+.project-detail-description {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    color: var(--text-light-tertiary);
+}
+
+/* Header Description */
+.header-description {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    color: var(--text-light-secondary);
+}
+
+/* Technology Names */
+.technology-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-light-dark);
+}
+
+/* Technology Levels */
+.technology-level {
+    font-size: 1.125rem;
+    color: var(--text-light-secondary);
+}
+
+/* Footer Project Titles */
+.footer-project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-light-footer);
+}
+
+/* Footer Project Descriptions */
+.footer-project-description {
+    font-size: 1.125rem;
+    color: var(--text-light-tertiary);
+}
+
+
 
 h2 {
     font-weight: bold !important;
@@ -441,37 +569,29 @@ h2 {
     color: var(--text-light-primary);
 }
 
-.dark .section-title {
-    color: var(--text-dark-primary);
-}
-
+/* Header Section */
 .header-section {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 1rem;
     text-align: center;
-    padding-bottom: 1rem;
 }
 
-/* Dark Mode Text Colors */
-.dark h2, .dark p {
+/* Dark Mode Styles - Consolidated */
+.dark h2, 
+.dark p,
+.dark .section-title,
+.dark .project-title,
+.dark .project-description,
+.dark .project-detail-title,
+.dark .project-detail-description,
+.dark .header-description,
+.dark .technology-name,
+.dark .technology-level,
+.dark .footer-project-title,
+.dark .footer-project-description {
     color: var(--text-dark-primary);
 }
 
-.dark .project-title {
-    color: var(--text-dark-primary);
-}
-
-.dark .project-detail-description {
-    color: var(--text-dark-primary);
-}
-
-.dark .header-description {
-    color: var(--text-dark-primary);
-}
-
-.dark .technology-level {
-    color: var(--text-dark-primary);
-}
-
-.dark #fontToggle, .dark #themeToggle {
+.dark #fontToggle, 
+.dark #themeToggle {
     background-color: var(--bg-dark-card);
 }
