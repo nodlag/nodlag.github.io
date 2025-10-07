@@ -151,7 +151,8 @@ body.font-pixelify {
 
 /* Technology Levels */
 .technology-level {
-    font-size: 1.125rem;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
     color: var(--text-light-secondary);
 }
 
