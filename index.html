@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javier Garrido – Creating Games with Code, Feel & FX</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Javier Garrido (@nodlag) - Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence. Portfolio includes Laika: Aged Through Blood, Friends vs Friends, and more.">
+    <meta name="keywords" content="game developer, Unity developer, Godot developer, C# developer, game programmer, game designer, VFX artist, technical artist, indie games, game development, Javier Garrido, nodlag, Laika, Friends vs Friends, Tiny Garden">
+    <meta name="author" content="Javier Garrido">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nodlag.github.io/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Javier Garrido – Game Developer Portfolio">
+    <meta property="og:description" content="Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nodlag.github.io/">
+    <meta property="og:image" content="https://nodlag.github.io/images/me/avatar.png">
+    <meta property="og:site_name" content="Javier Garrido Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Javier Garrido – Game Developer Portfolio">
+    <meta name="twitter:description" content="Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence.">
+    <meta name="twitter:image" content="https://nodlag.github.io/images/me/avatar.png">
+    <meta name="twitter:creator" content="@nodlag">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +47,45 @@
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Javier Garrido",
+        "alternateName": "nodlag",
+        "jobTitle": "Game Developer",
+        "description": "Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence.",
+        "url": "https://nodlag.github.io/",
+        "image": "https://nodlag.github.io/images/me/avatar.png",
+        "sameAs": [
+            "https://www.linkedin.com/in/javier-garrido-galdón-3811b326",
+            "https://twitter.com/nodlag"
+        ],
+        "knowsAbout": [
+            "Game Development",
+            "Unity Engine",
+            "Godot Engine", 
+            "C# Programming",
+            "Game Design",
+            "VFX",
+            "Technical Art"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Game Developer",
+            "description": "Creating games with code, feel & FX",
+            "skills": ["Unity", "Godot", "C#", "Game Design", "VFX", "Technical Art"]
+        },
+        "worksFor": [
+            {
+                "@type": "Organization",
+                "name": "Freelance Game Developer"
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-200 font-pixelify">
     <!-- Image Viewer Modal -->
@@ -46,7 +108,7 @@
         <header class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center gap-4">
-                    <img src="images/me/avatar.png" width="64" height="64" class="hidden sm:block rounded-full object-cover" style="width:64px;height:64px;" />
+                    <img src="images/me/avatar.png" width="64" height="64" class="hidden sm:block rounded-full object-cover" style="width:64px;height:64px;" alt="Javier Garrido - Game Developer Profile Photo" />
                     <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Hi! I'm Javi</h1>
                 </div>
                 <div class="flex items-center gap-4">
@@ -88,32 +150,32 @@
                     <div class="technologies-grid">
                         <!-- Unity -->
                         <div class="technology-card">
-                            <img src="images/skills/unity_engine_light.png" alt="Unity Engine" class="technology-icon block dark:hidden">
-                            <img src="images/skills/unity_engine_dark.png" alt="Unity Engine" class="technology-icon hidden dark:block">
+                            <img src="images/skills/unity_engine_light.png" alt="Unity Engine logo - Game development platform" class="technology-icon block dark:hidden">
+                            <img src="images/skills/unity_engine_dark.png" alt="Unity Engine logo - Game development platform" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">Unity</h3>
                             <p class="technology-level" data-start-date="2013">+ <span class="years-experience">0</span> Years</p>
                         </div>
 
                         <!-- Godot Engine -->
                         <div class="technology-card">
-                            <img src="images/skills/godot_engine_light.png" alt="Godot Engine" class="technology-icon block dark:hidden">
-                            <img src="images/skills/godot_engine_dark.png" alt="Godot Engine" class="technology-icon hidden dark:block">
+                            <img src="images/skills/godot_engine_light.png" alt="Godot Engine logo - Open source game engine" class="technology-icon block dark:hidden">
+                            <img src="images/skills/godot_engine_dark.png" alt="Godot Engine logo - Open source game engine" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">Godot Engine</h3>
                             <p class="technology-level" data-start-date="2022">+ <span class="years-experience">0</span> Years</p>
                         </div>
 
                         <!-- C# -->
                         <div class="technology-card">
-                            <img src="images/skills/c_sharp_light.png" alt="C#" class="technology-icon block dark:hidden">
-                            <img src="images/skills/c_sharp_dark.png" alt="C#" class="technology-icon hidden dark:block">
+                            <img src="images/skills/c_sharp_light.png" alt="C# programming language logo" class="technology-icon block dark:hidden">
+                            <img src="images/skills/c_sharp_dark.png" alt="C# programming language logo" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">C#</h3>
                             <p class="technology-level" data-start-date="2009">+ <span class="years-experience">0</span> Years</p>
                         </div>
 
                         <!-- Game Design -->
                         <div class="technology-card">
-                            <img src="images/skills/game_design_light.png" alt="Game Design" class="technology-icon block dark:hidden">
-                            <img src="images/skills/game_design_dark.png" alt="Game Design" class="technology-icon hidden dark:block">
+                            <img src="images/skills/game_design_light.png" alt="Game Design icon - Game design and development skills" class="technology-icon block dark:hidden">
+                            <img src="images/skills/game_design_dark.png" alt="Game Design icon - Game design and development skills" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">Game Design</h3>
                             <p class="technology-level" data-start-date="2011">+ <span class="years-experience">0</span> Years</p>
                         </div>
@@ -133,7 +195,7 @@
                 <div class="projects-grid">
                     <!-- Portfolio Items -->
                     <div class="project-card" onclick="toggleDetails('project_laika')">
-                        <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood">
+                        <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood - Post-apocalyptic western Metroidvania game screenshot">
                         
                         <div id="project_laika" class="project-details">
                             <div class="project-card-description">
@@ -156,7 +218,7 @@
                     </div>
 
                      <div class="project-card" onclick="toggleDetails('project_friends_vs_friends')">
-                        <img src="images/projects/friends_vs_friends.jpg" alt="Friends vs Friends">
+                        <img src="images/projects/friends_vs_friends.jpg" alt="Friends vs Friends - Online PvP shooter with deck building gameplay screenshot">
                         
                         <div id="project_friends_vs_friends" class="project-details">
                             <div class="project-card-description">
@@ -179,7 +241,7 @@
                     </div>
 
                     <div class="project-card" onclick="toggleDetails('project_tiny_garden')">
-                        <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden">
+                        <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden - Relaxing farming and puzzle game with magical toy garden screenshot">
                         
                         <div id="project_tiny_garden" class="project-details">
                             <div class="project-card-description">
@@ -202,7 +264,7 @@
                     </div>
 
                     <div class="project-card" onclick="toggleDetails('project_die_or_die')">
-                        <img src="images/projects/die_or_die.jpg" alt="Die or Die">
+                        <img src="images/projects/die_or_die.jpg" alt="Die or Die - Top-down shooter roguelite with dice mechanics gameplay screenshot">
                         
                         <div id="project_die_or_die" class="project-details">
                             <div class="project-card-description">
@@ -221,7 +283,7 @@
                     </div>
 
                     <div class="project-card" onclick="toggleDetails('project_cannibal_crossing')">
-                        <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing">
+                        <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing - Action-survival game with base building and co-op mode screenshot">
                         
                         <div id="project_cannibal_crossing" class="project-details">
                             <div class="project-card-description">
