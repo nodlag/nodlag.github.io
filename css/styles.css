@@ -325,11 +325,6 @@ h2 {
     color: var(--text-dark-light);
 }
 
-.technology-level {
-    font-size: 0.875rem;
-    color: var(--text-light-secondary);
-}
-
 .dark .technology-level {
     color: var(--text-dark-secondary);
 }
