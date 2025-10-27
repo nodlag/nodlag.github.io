@@ -60,9 +60,6 @@
     display: inline-block;
     font-family: var(--font-main-title);
     animation: vibrate 0.6s infinite;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    text-rendering: optimizeSpeed;
 }
 
 /* Default font for titles when not animated */
@@ -90,13 +87,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Font Family for m5x7 Mode */
 body.font-m5x7 {
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    text-rendering: geometricPrecision;
     font-size: 24px;
     line-height: 1;
-    image-rendering: pixelated;
-    font-smooth: never;
 }
 
 /* Section Titles */
