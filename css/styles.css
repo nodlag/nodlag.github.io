@@ -23,13 +23,10 @@
     --bg-light-steam-hover: #5ba1eb;
     --bg-light-button: #e5e7eb;
     
-    /* Text colors light theme */
-    --text-light-primary: #1f2937;
-    --text-light-secondary: #4a5568;
-    --text-light-tertiary: #4b5563;
-    --text-light-dark: #2d3748;
-    --text-light-footer: #1a202c;
-    --text-light-white: #ffffff;
+    /* Text colors - Unified system */
+    --text-primary: #1f2937;      /* Main text (titles, headings) */
+    --text-secondary: #4a5568;   /* Secondary text (descriptions) */
+    --text-tertiary: #6b7280;    /* Tertiary text (subtle info) */
     
     /* Dark theme backgrounds */
     --bg-dark-main: #374151;
@@ -39,10 +36,10 @@
     --bg-dark-steam: #1e1e1e;
     --bg-dark-steam-hover: #5ba1eb;
     
-    /* Text colors dark theme */
-    --text-dark-primary: #cecece;
-    --text-dark-secondary: #a0aec0;
-    --text-dark-light: #f7fafc;
+    /* Dark theme text colors */
+    --text-dark-primary: #f7fafc;    /* Main text (titles, headings) */
+    --text-dark-secondary: #a0aec0;  /* Secondary text (descriptions) */
+    --text-dark-tertiary: #6b7280;   /* Tertiary text (subtle info) */
     
     /* Modal and overlay colors */
     --overlay-dark: rgba(0, 0, 0, 0.9);
@@ -98,7 +95,7 @@ body.font-m5x7 {
     margin-bottom: 1.5rem;
     text-align: center;
     width: 100%;
-    color: var(--text-light-primary);
+    color: var(--text-primary);
 }
 
 /* Project Cards */
@@ -112,13 +109,13 @@ body.font-m5x7 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: var(--text-light-primary);
+    color: var(--text-primary);
 }
 
 /* Project Descriptions */
 .project-description {
     font-size: 1.125rem;
-    color: var(--text-light-tertiary);
+    color: var(--text-secondary);
 }
 
 /* Project Detail Titles */
@@ -126,12 +123,12 @@ body.font-m5x7 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: var(--text-light-primary);
+    color: var(--text-primary);
 }
 
 /* Project Detail Descriptions */
 .project-detail-description {
-    color: var(--text-light-tertiary);
+    color: var(--text-secondary);
 }
 
 /* Header Description */
@@ -139,7 +136,7 @@ body.font-m5x7 {
     max-width: 800px;
     margin: 1rem auto;
     margin-bottom: 2rem;
-    color: var(--text-light-secondary);
+    color: var(--text-secondary);
 }
 
 /* Technology Names */
@@ -147,14 +144,14 @@ body.font-m5x7 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: var(--text-light-dark);
+    color: var(--text-primary);
 }
 
 /* Technology Levels */
 .technology-level {
     font-family: var(--font-main-title);
     font-size: 1.2rem;
-    color: var(--text-light-secondary);
+    color: var(--text-secondary);
 }
 
 /* Footer Project Titles */
@@ -162,13 +159,13 @@ body.font-m5x7 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: var(--text-light-footer);
+    color: var(--text-primary);
 }
 
 /* Footer Project Descriptions */
 .footer-project-description {
     font-size: 1.125rem;
-    color: var(--text-light-tertiary);
+    color: var(--text-secondary);
 }
 
 h2 {
@@ -307,12 +304,12 @@ h2 {
 
 .technology-name {
     font-weight: 600;
-    color: var(--text-light-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .dark .technology-name {
-    color: var(--text-dark-light);
+    color: var(--text-dark-primary);
 }
 
 .dark .technology-level {
@@ -377,21 +374,21 @@ h2 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-light-footer);
+    color: var(--text-primary);
 }
 
 .dark .footer-project-title {
-    color: var(--text-dark-light);
+    color: var(--text-dark-primary);
 }
 
 .footer-project-description {
-    color: var(--text-light-tertiary);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
 .dark .footer-project-description {
-    color: var(--text-dark-primary);
+    color: var(--text-dark-secondary);
 }
 
 /* Image Viewer Modal */
@@ -481,7 +478,7 @@ h2 {
 }
 
 .social-link {
-    color: var(--text-light-secondary);
+    color: var(--text-secondary);
     transition: color 0.3s ease;
     padding: 0.5rem;
 }
@@ -563,7 +560,7 @@ h2 {
 
 .section-title {
     margin-bottom: 1rem;
-    color: var(--text-light-primary);
+    color: var(--text-primary);
 }
 
 /* Header Section */
