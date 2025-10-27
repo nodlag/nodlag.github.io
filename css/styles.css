@@ -83,8 +83,10 @@ h1, h2, h3, h4, h5, h6 {
 body.font-pixelify {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: none;
-    text-rendering: optimizeSpeed;
+    text-rendering: geometricPrecision;
     font-size: 1.2em;
+    image-rendering: pixelated;
+    font-smooth: never;
 }
 
 /* Section Titles */
