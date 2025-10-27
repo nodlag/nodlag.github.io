@@ -29,7 +29,7 @@
     <meta name="twitter:creator" content="@nodlag">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,7 +40,7 @@
                         primary: '#3B82F6',
                     },
                     fontFamily: {
-                        'pixelify': ['"Pixelify Sans"', 'sans-serif'],
+                        'm5x7': ['"m5x7"', 'monospace'],
                     }
                 }
             }
@@ -87,7 +87,7 @@
     }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-200 font-pixelify">
+<body class="bg-gray-50 text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-200 font-m5x7">
     <!-- Image Viewer Modal -->
     <div id="imageViewer" class="image-viewer-modal">
         <div class="image-viewer-content">
@@ -142,7 +142,7 @@
         <section class="header-section">
             <div class="container mx-auto px-4">
                 <p class="header-description">
-                    Hi! I'm Javier Garrido Gald&oacute;n (@nodlag), a <b>game developer</b> with a passion for creating memorable experiences through smooth controls, satisfying feedback, and all those little details that make a game feel just right. I specialize in Unity and Godot, and I love bringing ideas to life with a strong focus on game feel and polish. Whether it's making a jump feel snappy or fine-tuning a particle effect, I'm all about those finishing touches that players remember—even if they don't realize why.
+                    Hi! I'm Javier Garrido Gald&oacute;n (@nodlag), a <b>game developer</b> with a passion for creating memorable experiences through smooth controls, satisfying feedback, and all those little details that make a game feel just right. I specialize in Unity and Godot, and I love bringing ideas to life with a strong focus on game feel and polish. Whether it's making a jump feel snappy or fine-tuning a particle effect, I'm all about those finishing touches that players remember-even if they don't realize why.
                 </p>
 
                 <div class="technologies-section">
@@ -322,7 +322,7 @@
                 <h2 class="section-title">MORE PROJECTS</h2>
             </div>
             <p class="header-description">
-                I've been making games professionally since 2011, working on more than 20 titles and collaborating with major publishers like Chillingo (Electronic Arts), Noodlecake, and Re-Logic (Terraria). Over the years, I've had the chance to contribute to some amazing projects, and a couple of them were even recognized by Apple as "Game of the Week"—twice! It's been a wild and rewarding journey, and I'm always looking forward to the next creative challenge.
+                I've been making games professionally since 2011, working on more than 20 titles and collaborating with major publishers like Chillingo (Electronic Arts), Noodlecake, and Re-Logic (Terraria). Over the years, I've had the chance to contribute to some amazing projects, and a couple of them were even recognized by Apple as "Game of the Week"-twice! It's been a wild and rewarding journey, and I'm always looking forward to the next creative challenge.
             </p>
         </div>
     </section>
@@ -372,7 +372,7 @@
 
         function updateTitleFonts() {
             const titles = document.querySelectorAll('h1, h2, h3');
-            if (document.body.classList.contains('font-pixelify')) {
+            if (document.body.classList.contains('font-m5x7')) {
                 titles.forEach(title => {
                     if (!title.classList.contains('animated-title')) {
                         title.classList.add('animated-title');
@@ -393,21 +393,21 @@
         }
         
         // Check for saved font preference
-        if (localStorage.font === 'default' || (!('font' in localStorage) && !document.body.classList.contains('font-pixelify'))) {
-            document.body.classList.remove('font-pixelify');
+        if (localStorage.font === 'default' || (!('font' in localStorage) && !document.body.classList.contains('font-m5x7'))) {
+            document.body.classList.remove('font-m5x7');
         } else {
-            document.body.classList.add('font-pixelify');
+            document.body.classList.add('font-m5x7');
         }
         updateTitleFonts();
 
         // Font toggle functionality
         fontToggle.addEventListener('click', () => {
-            if (document.body.classList.contains('font-pixelify')) {
-                document.body.classList.remove('font-pixelify');
+            if (document.body.classList.contains('font-m5x7')) {
+                document.body.classList.remove('font-m5x7');
                 localStorage.font = 'default';
             } else {
-                document.body.classList.add('font-pixelify');
-                localStorage.font = 'pixelify';
+                document.body.classList.add('font-m5x7');
+                localStorage.font = 'm5x7';
             }
             updateTitleFonts();
         });

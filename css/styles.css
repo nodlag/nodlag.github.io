@@ -1,7 +1,16 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'm5x7';
+    src: url('../fonts/m5x7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* CSS Variables for Colors */
 :root {
     /* Main fonts */
     --font-main-title: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    --font-m5x7: 'm5x7', monospace;
     /* Light theme colors */
     --color-primary: #3B82F6;
     --color-primary-hover: #60A5FA;
@@ -79,19 +88,20 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Font Family for Pixelify Mode */
-body.font-pixelify {
+/* Font Family for m5x7 Mode */
+body.font-m5x7 {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: none;
     text-rendering: geometricPrecision;
-    font-size: 1.2em;
+    font-size: 24px;
+    line-height: 1;
     image-rendering: pixelated;
     font-smooth: never;
 }
 
 /* Section Titles */
 .section-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -134,11 +144,9 @@ body.font-pixelify {
 
 /* Header Description */
 .header-description {
-    font-size: 1.125rem;
-    line-height: 1.75;
-    margin-bottom: 2rem;
     max-width: 800px;
-    margin: 1.5rem auto;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
     color: var(--text-light-secondary);
 }
 
@@ -225,7 +233,7 @@ h2 {
 /* Title styling - Compact */
 .project-title {
     margin: 0.5rem 0 0.25rem 0;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -233,8 +241,6 @@ h2 {
 /* Project details - Compact spacing */
 .project-detail-description {
     margin-bottom: 0.75rem;
-    font-size: 1rem;
-    line-height: 1.4;
 }
 
 /* Video container - Maintain aspect ratio */
@@ -256,10 +262,9 @@ h2 {
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    font-size: 0.875rem;
     width: 100%;
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .steam-link:hover {
@@ -272,15 +277,6 @@ h2 {
 
 .dark .steam-link:hover {
     background-color: var(--bg-dark-steam-hover);
-}
-
-/* Header Description */
-.header-description {
-    max-width: 800px;
-    margin: 1.5rem auto;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: var(--text-light-secondary);
 }
 
 .dark .header-description {
@@ -558,12 +554,10 @@ h2 {
     }
     
     .project-title {
-        font-size: 1rem;
         margin: 0.25rem 0;
     }
     
     .project-detail-description {
-        font-size: 0.85rem;
         margin-bottom: 0.5rem;
     }
     
