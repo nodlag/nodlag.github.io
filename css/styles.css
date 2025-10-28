@@ -137,6 +137,14 @@ body.font-m5x7 {
     color: var(--text-secondary);
 }
 
+/* Section description (non-header) */
+.section-description {
+    max-width: 800px;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
 /* Technology Names */
 .technology-name {
     font-size: 1.25rem;
@@ -272,6 +280,10 @@ h2 {
 }
 
 .dark .header-description {
+    color: var(--text-dark-secondary);
+}
+
+.dark .section-description {
     color: var(--text-dark-secondary);
 }
 
@@ -568,6 +580,12 @@ h2 {
 
 /* Header Section */
 .header-section {
+    padding: 0.5rem 0 1rem;
+    text-align: center;
+}
+
+/* Generic Section Intro (non-header) */
+.section-intro {
     padding: 0.5rem 0 1rem;
     text-align: center;
 }
