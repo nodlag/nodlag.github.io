@@ -90,7 +90,7 @@ body.font-m5x7 {
 .section-title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-align: center;
     width: 100%;
     color: var(--text-primary);
@@ -236,11 +236,13 @@ h2 {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.2;
+    color: var(--text-primary);
 }
 
 /* Project details - Compact spacing */
 .project-detail-description {
     margin-bottom: 0.75rem;
+    color: var(--text-secondary);
 }
 
 /* Video container - Maintain aspect ratio */
@@ -592,18 +594,16 @@ h2 {
 
 /* Dark Mode Styles - Consolidated */
 .dark h2, 
-.dark p,
 .dark .section-title,
 .dark .project-title,
-.dark .project-description,
 .dark .project-detail-title,
-.dark .project-detail-description,
-.dark .header-description,
 .dark .technology-name,
-.dark .technology-level,
-.dark .footer-project-title,
-.dark .footer-project-description {
+.dark .footer-project-title {
     color: var(--text-dark-primary);
+}
+
+.dark .project-detail-description {
+    color: var(--text-dark-secondary);
 }
 
 .dark #fontToggle, 
