@@ -15,13 +15,14 @@
     --color-primary: #3B82F6;
     --color-primary-hover: #60A5FA;
     
+    /* Steam colors */
+    --color-steam-primary: #293c4d;
+    --color-steam-primary-hover: #5ba1eb;
+
     /* Background colors */
     --bg-light-main: #f8f9fa;
     --bg-light-card: #ffffff;
     --bg-light-section: #f8fafc;
-    --bg-light-steam: #1e1e1e;
-    --bg-light-steam-hover: #5ba1eb;
-    --bg-light-button: #e5e7eb;
     
     /* Text colors - Unified system */
     --text-primary: #1f2937;      /* Main text (titles, headings) */
@@ -32,9 +33,6 @@
     --bg-dark-main: #374151;
     --bg-dark-card: #1E1E1E;
     --bg-dark-section: #1a1a1a;
-    --bg-dark-footer: #2d3748;
-    --bg-dark-steam: #1e1e1e;
-    --bg-dark-steam-hover: #5ba1eb;
     
     /* Dark theme text colors */
     --text-dark-primary: #f7fafc;    /* Main text (titles, headings) */
@@ -84,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Font Family for m5x7 Mode */
 body.font-m5x7 {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1;
 }
 
@@ -202,7 +200,12 @@ h2 {
 }
 
 .project-card-description{
-    margin-top: 0px;
+    padding: 0.6rem;
+    background-color: var(--bg-light-card);
+}
+
+.dark .project-card-description{
+    background-color: var(--bg-dark-card);
 }
 
 /* Image styles - Full visibility priority */
@@ -247,7 +250,7 @@ h2 {
     justify-content: center;
     gap: 0.25rem;
     padding: 0.375rem 0.75rem;
-    background-color: var(--bg-light-steam);
+    background-color: var(--color-steam-primary);
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -257,15 +260,15 @@ h2 {
 }
 
 .steam-link:hover {
-    background-color: var(--bg-light-steam-hover);
+    background-color: var(--color-steam-primary-hover);
 }
 
 .dark .steam-link {
-    background-color: var(--bg-dark-steam);
+    background-color: var(--color-steam-primary);
 }
 
 .dark .steam-link:hover {
-    background-color: var(--bg-dark-steam-hover);
+    background-color: var(--color-steam-primary-hover);
 }
 
 .dark .header-description {
@@ -353,7 +356,7 @@ h2 {
 }
 
 .dark .footer-project-card {
-    background-color: var(--bg-dark-footer);
+    background-color: var(--bg-dark-card);
 }
 
 .footer-project-card:hover {
