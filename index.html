@@ -327,6 +327,41 @@
         </div>
     </section>
 
+    <!-- Just Me Section -->
+    <section class="section-intro">
+        <div class="container mx-auto px-4">
+            <div class="technologies-section">
+                <h2 class="section-title">Just me, making games and porting worlds</h2>
+            </div>
+            <figure class="mt-6">
+                <img
+                    id="mePhoto"
+                    src="images/me/me-november-2025.jpg"
+                    alt="Javier Garrido in November 2025"
+                    loading="lazy"
+                    class="mx-auto h-auto w-[30%] max-w-full cursor-zoom-in rounded-lg shadow-lg"
+                >
+                <figcaption class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">Probably compiling something right now.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Modal for Just Me photo -->
+    <div id="meModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4">
+        <button
+            id="meModalClose"
+            aria-label="Close image"
+            class="absolute right-4 top-4 rounded-full bg-white/90 p-2 text-gray-800 shadow hover:bg-white"
+        >
+            ✕
+        </button>
+        <img
+            src="images/me/me-november-2025.jpg"
+            alt="Javier Garrido in November 2025"
+            class="max-h-[90vh] w-auto rounded-lg shadow-2xl"
+        >
+    </div>
+
     <footer class="py-4 text-center text-gray-600 dark:text-gray-400">
         <p>&copy; <script>document.write(new Date().getFullYear())</script></p>
     </footer>
@@ -499,6 +534,32 @@
 
         // Call the function when the page loads
         document.addEventListener('DOMContentLoaded', updateYearsOfExperience);
+
+        // Simple modal for "Just Me" photo
+        (function() {
+            const img = document.getElementById('mePhoto');
+            const modal = document.getElementById('meModal');
+            const closeBtn = document.getElementById('meModalClose');
+            if (!img || !modal || !closeBtn) return;
+
+            function openModal() {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            img.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        })();
     </script>
 </body>
 </html>
