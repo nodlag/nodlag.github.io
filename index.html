@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javier Garrido – Creating Games with Code, Feel & FX</title>
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/me/avatar.png">
+    <link rel="apple-touch-icon" href="images/me/avatar.png">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Javier Garrido (@nodlag) - Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence. Portfolio includes Laika: Aged Through Blood, Friends vs Friends, and more.">
-    <meta name="keywords" content="game developer, Unity developer, Godot developer, C# developer, game programmer, game designer, VFX artist, technical artist, indie games, game development, Javier Garrido, nodlag, Laika, Friends vs Friends, Tiny Garden">
+    <meta name="description" content="Javier Garrido (@nodlag) - Game developer from Valencia, Spain specializing in Unity, Godot, and C#. Portfolio includes CloverPit, Laika: Aged Through Blood, Summerhouse, Tiny Garden, Friends vs Friends and more.">
+    <meta name="keywords" content="game developer, Unity developer, Godot developer, C# developer, game programmer, game designer, VFX artist, technical artist, indie games, game development, Javier Garrido, nodlag, CloverPit, Laika, Summerhouse, Friends vs Friends, Tiny Garden, Beat the Beats VR">
     <meta name="author" content="Javier Garrido">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nodlag.github.io/">
@@ -17,35 +25,24 @@
     <meta property="og:description" content="Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nodlag.github.io/">
-    <meta property="og:image" content="https://nodlag.github.io/images/me/avatar.png">
+    <meta property="og:image" content="https://nodlag.github.io/images/social_card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Javier Garrido – Game Developer Portfolio">
     <meta property="og:site_name" content="Javier Garrido Portfolio">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Javier Garrido – Game Developer Portfolio">
     <meta name="twitter:description" content="Experienced game developer specializing in Unity, Godot, and C#. Creating memorable gaming experiences with focus on game feel, polish, and technical excellence.">
-    <meta name="twitter:image" content="https://nodlag.github.io/images/me/avatar.png">
+    <meta name="twitter:image" content="https://nodlag.github.io/images/social_card.png">
+    <meta name="twitter:site" content="@nodlag">
     <meta name="twitter:creator" content="@nodlag">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                    },
-                    fontFamily: {
-                        'm5x7': ['"m5x7"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/styles.css">
     
     <!-- Structured Data (JSON-LD) -->
@@ -86,6 +83,121 @@
         ]
     }
     </script>
+
+    <!-- Structured Data (JSON-LD) - Games -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Games developed by Javier Garrido",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "CloverPit",
+                    "description": "A rogue-lite slot machine nightmare. Gamble for your life in a never-ending debt simulator.",
+                    "url": "https://store.steampowered.com/app/3314790/CloverPit",
+                    "image": "https://nodlag.github.io/images/projects/cloverpit.jpg",
+                    "gamePlatform": ["Xbox", "PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Laika: Aged Through Blood",
+                    "description": "An action-adventure Metroidvania set in a post-apocalyptic western world.",
+                    "url": "https://store.steampowered.com/app/1796220/Laika_Aged_Through_Blood",
+                    "image": "https://nodlag.github.io/images/projects/laika.jpg",
+                    "gamePlatform": ["Nintendo Switch", "PlayStation 5", "Xbox", "PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Summerhouse",
+                    "description": "A tiny building game about beautiful lived-in houses.",
+                    "url": "https://store.steampowered.com/app/2533960/SUMMERHOUSE",
+                    "image": "https://nodlag.github.io/images/projects/summerhouse.jpg",
+                    "gamePlatform": ["Nintendo Switch", "Xbox", "PlayStation", "PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Beat the Beats VR",
+                    "description": "An electric mix of rhythm and boxing in hypnotic VR.",
+                    "url": "https://store.steampowered.com/app/2677480/Beat_the_Beats_VR",
+                    "image": "https://nodlag.github.io/images/projects/beat_the_beats_vr.jpg",
+                    "gamePlatform": ["PICO XR", "Meta Quest", "PC VR"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Friends vs Friends",
+                    "description": "A frantic, online PvP shooter that combines combat and deck building.",
+                    "url": "https://store.steampowered.com/app/1785150/Friends_vs_Friends",
+                    "image": "https://nodlag.github.io/images/projects/friends_vs_friends.jpg",
+                    "gamePlatform": ["PlayStation", "Xbox", "PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Tiny Garden",
+                    "description": "Grow a pocket-sized garden inside a magical toy in this relaxing mix of farming, puzzles, and strategy.",
+                    "url": "https://store.steampowered.com/app/2812450/Tiny_Garden",
+                    "image": "https://nodlag.github.io/images/projects/tiny_garden.jpg",
+                    "gamePlatform": ["PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Die or Die",
+                    "description": "A top-down shooter roguelite where you roll the dice and choose how you will die.",
+                    "url": "https://store.steampowered.com/app/3842190/Die_or_Die",
+                    "image": "https://nodlag.github.io/images/projects/die_or_die.jpg",
+                    "gamePlatform": ["PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 8,
+                "item": {
+                    "@type": "VideoGame",
+                    "name": "Cannibal Crossing",
+                    "description": "An action-survival game in a randomly generated town with hordes of enemies and 1-4 player co-op.",
+                    "url": "https://store.steampowered.com/app/1304090/Cannibal_Crossing",
+                    "image": "https://nodlag.github.io/images/projects/cannibal_crossing.jpg",
+                    "gamePlatform": ["PC"],
+                    "contributor": {"@type": "Person", "name": "Javier Garrido"}
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-200 font-m5x7">
     <!-- Image Viewer Modal -->
@@ -113,12 +225,12 @@
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/javier-garrido-galdón-3811b326" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/javier-garrido-galdón-3811b326" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="https://twitter.com/nodlag" target="_blank" class="social-link" aria-label="Twitter">
+                        <a href="https://twitter.com/nodlag" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
@@ -196,193 +308,193 @@
                     <!-- Portfolio Items -->
 
                     <!-- CloverPit-->
-                    <div class="project-card" onclick="toggleDetails('cloverpit')">
-                        <img src="images/projects/cloverpit.jpg" alt="CloverPit game screenshot">
+                    <article class="project-card" onclick="toggleDetails('cloverpit')">
+                        <img src="images/projects/cloverpit.jpg" alt="CloverPit game screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="cloverpit" class="project-details">
                             <div class="project-card-description">
 
-                                <a href="https://store.steampowered.com/app/3314790/CloverPit" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/3314790/CloverPit" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">CloverPit</h2>
+                                <h3 class="project-title">CloverPit</h3>
                                 <p class="project-detail-description">A rogue-lite slot machine nightmare. Gamble for your life in a never-ending debt simulator!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I handled the Xbox versions of the game, taking care of all the technical integration and platform-specific details to make it run smoothly within the Microsoft ecosystem, with the support of the original Panik Arcade team and Future Friends Games.</p>
 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/oNs3dEXHYp8?si=V9RYA-FPCZHjkddg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/oNs3dEXHYp8?si=V9RYA-FPCZHjkddg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
 
                     <!-- Laika: Aged Through Blood -->
-                    <div class="project-card" onclick="toggleDetails('project_laika')">
-                        <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood - Post-apocalyptic western Metroidvania game screenshot">
+                    <article class="project-card" onclick="toggleDetails('project_laika')">
+                        <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood - Post-apocalyptic western Metroidvania game screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="project_laika" class="project-details">
                             <div class="project-card-description">
 
-                                <a href="https://store.steampowered.com/app/1796220/Laika_Aged_Through_Blood" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/1796220/Laika_Aged_Through_Blood" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Laika: Aged Through Blood</h2>
+                                <h3 class="project-title">Laika: Aged Through Blood</h3>
                                 <p class="project-detail-description">Laika: Aged Through Blood is an action-adventure Metroidvania set in a post-apocalyptic western world. Play as Laika, a coyote mother and fierce warrior, and carve your motorbike through a land ravaged by betrayal and loss as you uncover dark secrets in the pursuit of vengeance against oppression.</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I was responsible for porting the Steam version of the game to Nintendo Switch, working closely with the original development team to technically adapt the project and tweak several mechanics to fit the specific requirements of the Nintendo Switch platform. I was also responsible for the updated PlayStation 5 version and for bringing the game to its physical PS5 release published by Super Rare Games.</p>
 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HHJjbt-dwNE?si=XgRpqg06nj-_Kodm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/HHJjbt-dwNE?si=XgRpqg06nj-_Kodm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Summerhouse -->
-                    <div class="project-card" onclick="toggleDetails('project_summerhouse')">
-                        <img src="images/projects/summerhouse.jpg" alt="Summerhouse - A tiny building game">
+                    <article class="project-card" onclick="toggleDetails('project_summerhouse')">
+                        <img src="images/projects/summerhouse.jpg" alt="Summerhouse - A tiny building game" loading="lazy" width="460" height="215">
                         
                         <div id="project_summerhouse" class="project-details">
                             <div class="project-card-description">
 
-                                <a href="https://store.steampowered.com/app/2533960/SUMMERHOUSE" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/2533960/SUMMERHOUSE" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Summerhouse</h2>
+                                <h3 class="project-title">Summerhouse</h3>
                                 <p class="project-detail-description">A tiny building game about beautiful lived-in houses. No rules or restrictions, just pure creativity.</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">Worked alongside the game's original creator to port its unique visual style to Nintendo Switch, balancing artistic fidelity with performance constraints. Also supported the game's release on Xbox and PlayStation platforms.</p>
 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/X9hVySSu3jU?si=8JvyjoUT6gdbys4g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/X9hVySSu3jU?si=8JvyjoUT6gdbys4g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Beat the Beats VR -->
-                    <div class="project-card" onclick="toggleDetails('beat_the_beats_vr')">
-                        <img src="images/projects/beat_the_beats_vr.jpg" alt="Beat the Beats VR - Electric mix of rhythm and boxing game screenshot">
+                    <article class="project-card" onclick="toggleDetails('beat_the_beats_vr')">
+                        <img src="images/projects/beat_the_beats_vr.jpg" alt="Beat the Beats VR - Electric mix of rhythm and boxing game screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="beat_the_beats_vr" class="project-details">
                             <div class="project-card-description">
 
-                                <a href="https://store.steampowered.com/app/2677480/Beat_the_Beats_VR" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/2677480/Beat_the_Beats_VR" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Beat the Beats VR</h2>
+                                <h3 class="project-title">Beat the Beats VR</h3>
                                 <p class="project-detail-description"> Beat the Beats is an electric mix of rhythm and boxing game! Use actual boxing-style punches to pound your way through musical arcade levels in hypnotic VR. Get pumped, get moving and beat the beats!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">Led development of the VR version for PICO XR, and implemented the technical side of DLC monetization for both PICO and Meta Quest.</p>
 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2JlHMrUqN1c?si=yywQ-lGjPZcwktlK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/2JlHMrUqN1c?si=yywQ-lGjPZcwktlK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Friends vs Friends -->
-                     <div class="project-card" onclick="toggleDetails('project_friends_vs_friends')">
-                        <img src="images/projects/friends_vs_friends.jpg" alt="Friends vs Friends - Online PvP shooter with deck building gameplay screenshot">
+                     <article class="project-card" onclick="toggleDetails('project_friends_vs_friends')">
+                        <img src="images/projects/friends_vs_friends.jpg" alt="Friends vs Friends - Online PvP shooter with deck building gameplay screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="project_friends_vs_friends" class="project-details">
                             <div class="project-card-description">
                                 
-                                <a href="https://store.steampowered.com/app/1785150/Friends_vs_Friends" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/1785150/Friends_vs_Friends" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Friends vs Friends</h2>
+                                <h3 class="project-title">Friends vs Friends</h3>
                                 <p class="project-detail-description">A frantic, online PvP shooter that combines combat and deck building. Choose a character, customize your card-based loadout, and get ready for the fights of your life!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">Partnering with the original developers and the console porting team, I helped refine and optimize the project to achieve a more fluid and responsive experience on PlayStation and Xbox.</p>
                                 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dVxCC6STMbo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/dVxCC6STMbo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Tiny Garden -->
-                    <div class="project-card" onclick="toggleDetails('project_tiny_garden')">
-                        <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden - Relaxing farming and puzzle game with magical toy garden screenshot">
+                    <article class="project-card" onclick="toggleDetails('project_tiny_garden')">
+                        <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden - Relaxing farming and puzzle game with magical toy garden screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="project_tiny_garden" class="project-details">
                             <div class="project-card-description">
                                 
-                                <a href="https://store.steampowered.com/app/2812450/Tiny_Garden" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/2812450/Tiny_Garden" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Tiny Garden</h2>
+                                <h3 class="project-title">Tiny Garden</h3>
                                 <p class="project-detail-description">Tiny Garden lets you grow a pocket-sized garden inside a magical toy passed down through generations. Nurture plants, trade them for furniture, and customize your space in this relaxing mix of farming, puzzles, and strategy. No scores or time limits — let your creativity bloom!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I served as the Technical Artist for the game, where I designed and implemented all VFX and animations, blending technical execution with creative vision to enrich the game's atmosphere.</p>
                                 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yVig9KKjK10?si=4W47JYVZy4QNqe4N" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/yVig9KKjK10?si=4W47JYVZy4QNqe4N" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Die or Die -->
-                    <div class="project-card" onclick="toggleDetails('project_die_or_die')">
-                        <img src="images/projects/die_or_die.jpg" alt="Die or Die - Top-down shooter roguelite with dice mechanics gameplay screenshot">
+                    <article class="project-card" onclick="toggleDetails('project_die_or_die')">
+                        <img src="images/projects/die_or_die.jpg" alt="Die or Die - Top-down shooter roguelite with dice mechanics gameplay screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="project_die_or_die" class="project-details">
                             <div class="project-card-description">
                                 
-                                <a href="https://store.steampowered.com/app/3842190/Die_or_Die" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/3842190/Die_or_Die" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Die or Die</h2>
+                                <h3 class="project-title">Die or Die</h3>
                                 <p class="project-detail-description">Roll the dice and choose how you will die. Die or Die is a top-down shooter roguelite where you run, shoot and dodge enemies to get dice with which to disable threats or unlock abilities. Roll. Die. Repeat.</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I led the creation of the initial prototype and collaborated during production to refine the game feel and ensure the project met its technical goals.</p>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Cannibal Crossing -->
-                    <div class="project-card" onclick="toggleDetails('project_cannibal_crossing')">
-                        <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing - Action-survival game with base building and co-op mode screenshot">
+                    <article class="project-card" onclick="toggleDetails('project_cannibal_crossing')">
+                        <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing - Action-survival game with base building and co-op mode screenshot" loading="lazy" width="460" height="215">
                         
                         <div id="project_cannibal_crossing" class="project-details">
                             <div class="project-card-description">
 
-                                <a href="https://store.steampowered.com/app/1304090/Cannibal_Crossing" class="steam-link" target="_blank">
+                                <a href="https://store.steampowered.com/app/1304090/Cannibal_Crossing" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h2 class="project-title">Cannibal Crossing</h2>
+                                <h3 class="project-title">Cannibal Crossing</h3>
                                 <p class="project-detail-description">Cannibal Crossing is an action-survival game where you explore the randomly generated town of Earlsboro while scavenging, fighting hordes of enemies, building a base, and searching for a way to escape! Meet survivors with new abilities and lots of cannibals. Includes a co-op mode for 1-4 players!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I was involved in the original development of the game, playing a hands-on role in core areas like design, programming, feel, and VFX, helping shape the game's identity from the ground up.</p>
                                 
                                 <div class="project-video">
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_JycN5zJCM0?si=5wFbGny4iKiwn1eA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/_JycN5zJCM0?si=5wFbGny4iKiwn1eA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </main>
@@ -436,7 +548,7 @@
     </div>
 
     <footer class="py-4 text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; <script>document.write(new Date().getFullYear())</script></p>
+        <p>&copy; <span id="footerYear"></span></p>
     </footer>
 
     <script>
@@ -633,6 +745,9 @@
                 if (e.target === modal) closeModal();
             });
         })();
+
+        // Footer year
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
