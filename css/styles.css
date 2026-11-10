@@ -1,9 +1,19 @@
-/* Font Face Declarations */
+/* Font Face Declarations (both fonts are self-hosted and preloaded from index.html) */
 @font-face {
     font-family: 'm5x7';
-    src: url('../fonts/m5x7.ttf') format('truetype');
+    src: url('../fonts/m5x7.woff2') format('woff2'),
+         url('../fonts/m5x7.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/BebasNeue-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* CSS Variables for Colors */
@@ -11,55 +21,48 @@
     /* Main fonts */
     --font-main-title: 'Bebas Neue', Arial, Helvetica, sans-serif;
     --font-m5x7: 'm5x7', monospace;
-    /* Light theme colors */
+
+    /* Accent colors */
     --color-primary: #3B82F6;
     --color-primary-hover: #60A5FA;
-    
+
     /* Steam colors */
     --color-steam-primary: #293c4d;
     --color-steam-primary-hover: #5ba1eb;
 
-    /* Background colors */
+    /* Light theme */
     --bg-light-main: #f8f9fa;
     --bg-light-card: #ffffff;
-    --bg-light-section: #f8fafc;
-    
-    /* Text colors - Unified system */
     --text-primary: #1f2937;      /* Main text (titles, headings) */
-    --text-secondary: #4a5568;   /* Secondary text (descriptions) */
-    --text-tertiary: #6b7280;    /* Tertiary text (subtle info) */
-    
-    /* Dark theme backgrounds */
+    --text-secondary: #4a5568;    /* Secondary text (descriptions) */
+
+    /* Dark theme */
     --bg-dark-main: #374151;
     --bg-dark-card: #1E1E1E;
-    --bg-dark-section: #1a1a1a;
-    
-    /* Dark theme text colors */
     --text-dark-primary: #f7fafc;    /* Main text (titles, headings) */
     --text-dark-secondary: #a0aec0;  /* Secondary text (descriptions) */
-    --text-dark-tertiary: #6b7280;   /* Tertiary text (subtle info) */
-    
-    /* Modal and overlay colors */
-    --overlay-dark: rgba(0, 0, 0, 0.9);
-    --overlay-light: rgba(0, 0, 0, 0.5);
-    --overlay-button: rgba(255, 255, 255, 0.1);
-    --overlay-button-hover: rgba(255, 255, 255, 0.2);
 }
 
-/* Animated Title Styles */
-.animated-title {
-    display: inline-block;
-}
-
-.animated-title span {
-    display: inline-block;
-    font-family: var(--font-main-title);
-    animation: vibrate 0.6s infinite;
-}
-
-/* Default font for titles when not animated */
+/* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-main-title);
+}
+
+/* Animated titles (pixel-font mode): one span per word, one per letter.
+   Words never break in the middle; only the letters vibrate. */
+.animated-title {
+    display: inline-block;
+    word-spacing: 0.09em;
+}
+
+.animated-title .title-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.animated-title .title-letter {
+    display: inline-block;
+    animation: vibrate 0.6s infinite;
 }
 
 @keyframes vibrate {
@@ -86,7 +89,18 @@ body.font-m5x7 {
     line-height: 1;
 }
 
-/* Section Titles */
+/* Sections */
+.header-section,
+.section-intro {
+    padding: 0.5rem 0 1rem;
+    text-align: center;
+}
+
+.projects-section {
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
 .section-title {
     font-size: 2rem;
     font-weight: bold;
@@ -96,197 +110,11 @@ body.font-m5x7 {
     color: var(--text-primary);
 }
 
-/* Project Cards */
-.project-card {
-    padding: 1.5rem;
-    cursor: pointer;
-}
-
-/* Project Titles */
-.project-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-/* Project Descriptions */
-.project-description {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-}
-
-/* Project Detail Titles */
-.project-detail-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-/* Project Detail Descriptions */
-.project-detail-description {
-    color: var(--text-secondary);
-}
-
-/* Header Description */
-.header-description {
-    max-width: 800px;
-    margin: 1rem auto;
-    margin-bottom: 2rem;
-    color: var(--text-secondary);
-}
-
-/* Section description (non-header) */
+.header-description,
 .section-description {
     max-width: 800px;
-    margin: 1rem auto;
-    margin-bottom: 2rem;
+    margin: 1rem auto 2rem;
     color: var(--text-secondary);
-}
-
-/* Technology Names */
-.technology-name {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-/* Technology Levels */
-.technology-level {
-    font-family: var(--font-main-title);
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-}
-
-/* Footer Project Titles */
-.footer-project-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-/* Footer Project Descriptions */
-.footer-project-description {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-}
-
-h2 {
-    font-weight: bold !important;
-}
-
-/* Project Card Functionality */
-.project-card {
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    padding: 0;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 0;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-/* Project Details Toggle */
-.project-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    margin-top: 0.5rem;
-}
-
-.project-details.active {
-    max-height: 1000px;
-}
-
-.project-card-description{
-    padding: 0.6rem;
-    background-color: var(--bg-light-card);
-}
-
-.dark .project-card-description{
-    background-color: var(--bg-dark-card);
-}
-
-/* Image styles - Full visibility priority */
-.project-card img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0.25rem 0;
-    border-radius: 0;
-    background-color: var(--bg-light-main);
-}
-
-.dark .project-card img {
-    background-color: var(--bg-dark-main);
-}
-
-/* Title styling - Compact */
-.project-title {
-    margin: 0.5rem 0 0.25rem 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--text-primary);
-}
-
-/* Project details - Compact spacing */
-.project-detail-description {
-    margin-bottom: 0.75rem;
-    color: var(--text-secondary);
-}
-
-/* Video container - Maintain aspect ratio */
-.project-video {
-    width: 100%;
-    aspect-ratio: 16/9;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Steam link - Compact */
-.steam-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    padding: 0.375rem 0.75rem;
-    background-color: var(--color-steam-primary);
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom: 16px;
-}
-
-.steam-link:hover {
-    background-color: var(--color-steam-primary-hover);
-}
-
-.dark .steam-link {
-    background-color: var(--color-steam-primary);
-}
-
-.dark .steam-link:hover {
-    background-color: var(--color-steam-primary-hover);
-}
-
-.dark .header-description {
-    color: var(--text-dark-secondary);
-}
-
-.dark .section-description {
-    color: var(--text-dark-secondary);
 }
 
 /* Technologies Section */
@@ -309,10 +137,6 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-.dark .technology-card {
-    background-color: var(--bg-dark-card);
-}
-
 .technology-icon {
     width: 90px;
     height: 90px;
@@ -320,219 +144,34 @@ h2 {
 }
 
 .technology-name {
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.dark .technology-name {
-    color: var(--text-dark-primary);
-}
-
-.dark .technology-level {
-    color: var(--text-dark-secondary);
-}
-
-/* Footer Projects Section */
-.footer-projects {
-    background-color: var(--bg-light-section);
-    padding: 4rem 0;
-    margin-top: 4rem;
-}
-
-.dark .footer-projects {
-    background-color: var(--bg-dark-section);
-}
-
-.footer-projects-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.footer-projects-title {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.footer-projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.footer-project-card {
-    background-color: var(--bg-light-card);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.dark .footer-project-card {
-    background-color: var(--bg-dark-card);
-}
-
-.footer-project-card:hover {
-    transform: translateY(-5px);
-}
-
-.footer-project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.footer-project-content {
-    padding: 1.5rem;
-}
-
-.footer-project-title {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
 
-.dark .footer-project-title {
-    color: var(--text-dark-primary);
-}
-
-.footer-project-description {
+.technology-level {
+    font-family: var(--font-main-title);
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    font-size: 0.875rem;
-    line-height: 1.5;
 }
 
-.dark .footer-project-description {
-    color: var(--text-dark-secondary);
-}
-
-/* Image Viewer Modal */
-.image-viewer-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--overlay-dark);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.image-viewer-modal.active {
-    display: flex;
-    opacity: 1;
-}
-
-.image-viewer-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-viewer-image {
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.image-viewer-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.image-viewer-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 1001;
-}
-
-.image-viewer-nav button {
-    background: var(--overlay-button);
-    border: none;
-    color: white;
-    padding: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.image-viewer-nav button:hover {
-    background: var(--overlay-button-hover);
-}
-
-.image-viewer-counter {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 16px;
-    background: var(--overlay-light);
-    padding: 5px 15px;
-}
-
-/* Social Media Links */
-.social-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.social-link {
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-    padding: 0.5rem;
-}
-
-.dark .social-link {
-    color: var(--text-dark-secondary);
-}
-
-.social-link:hover {
-    color: var(--color-primary);
-}
-
-.dark .social-link:hover {
-    color: var(--color-primary-hover);
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-}
-
-/* Projects Grid Layout - Redesigned */
+/* Projects Grid Layout */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     justify-items: center;
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
+        padding: 0.5rem 0;
     }
 }
 
@@ -543,70 +182,240 @@ h2 {
     }
 }
 
+/* Project Cards */
+.project-card {
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Card header: capsule image + always-visible title and role.
+   The toggle button is stretched over the whole header, so the header
+   is one big click/tap target and one keyboard stop. */
+.project-header {
+    position: relative;
+}
+
+.project-header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-light-main);
+}
+
+.project-summary {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 0.75rem;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--bg-light-card);
+}
+
+.project-title,
+.project-role {
+    grid-column: 1;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.project-role {
+    color: var(--text-secondary);
+}
+
+/* Chevron: tells the visitor the card opens, and flips when it is open */
+.project-summary::after {
+    content: '';
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0 0.35rem;
+    border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    transform: translateY(-25%) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.project-card.is-open .project-summary::after {
+    transform: translateY(25%) rotate(-135deg);
+}
+
+.project-toggle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.project-toggle:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: -3px;
+}
+
+/* Project Details Toggle.
+   The grid row animates from 0fr to 1fr, so the panel is always exactly as
+   tall as its content. visibility keeps the collapsed link out of the tab order. */
+.project-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    visibility: hidden;
+    transition: grid-template-rows 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.project-card.is-open .project-details {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.project-card-description {
+    min-height: 0;
+    overflow: hidden;
+    padding: 0 0.6rem;
+    background-color: var(--bg-light-card);
+}
+
+/* Vertical padding lives here: padding on the grid item itself would keep
+   the collapsed panel from reaching zero height */
+.project-card-description::before,
+.project-card-description::after {
+    content: '';
+    display: block;
+    height: 0.6rem;
+}
+
+.project-detail-description {
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* Video container - Maintain aspect ratio.
+   The iframe is created by the script when the card opens. */
+.project-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    background-color: #000;
+}
+
+.project-video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Steam link - Compact */
+.steam-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background-color: var(--color-steam-primary);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+.steam-link:hover {
+    background-color: var(--color-steam-primary-hover);
+}
+
 @media (max-width: 767px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        padding: 0.5rem;
-    }
-    
     .project-card {
         padding: 0.5rem;
         max-width: 100%;
     }
-    
-    .project-card img {
-        margin: 0.125rem 0;
-    }
-    
-    .project-title {
-        margin: 0.25rem 0;
-    }
-    
+
     .project-detail-description {
         margin-bottom: 0.5rem;
     }
-    
 }
 
-/* Section Styles */
-.projects-section {
-    text-align: center;
-    margin-bottom: 0.25rem;
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
 }
 
-.section-title {
-    margin-bottom: 1rem;
-    color: var(--text-primary);
+@media (min-width: 640px) {
+    .social-links {
+        gap: 1rem;
+    }
 }
 
-/* Header Section */
-.header-section {
-    padding: 0.5rem 0 1rem;
-    text-align: center;
+.social-link {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    padding: 0.5rem;
 }
 
-/* Generic Section Intro (non-header) */
-.section-intro {
-    padding: 0.5rem 0 1rem;
-    text-align: center;
+.social-link:hover {
+    color: var(--color-primary);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
 }
 
 /* Dark Mode Styles - Consolidated */
-.dark h2, 
 .dark .section-title,
 .dark .project-title,
-.dark .project-detail-title,
-.dark .technology-name,
-.dark .footer-project-title {
+.dark .technology-name {
     color: var(--text-dark-primary);
 }
 
-.dark .project-detail-description {
+.dark .header-description,
+.dark .section-description,
+.dark .technology-level,
+.dark .project-role,
+.dark .project-detail-description,
+.dark .social-link {
     color: var(--text-dark-secondary);
 }
 
-.dark #fontToggle, 
+.dark .social-link:hover {
+    color: var(--color-primary-hover);
+}
+
+.dark .technology-card,
+.dark .project-summary,
+.dark .project-card-description {
+    background-color: var(--bg-dark-card);
+}
+
+.dark .project-summary::after {
+    border-color: var(--text-dark-secondary);
+}
+
+.dark .project-header img {
+    background-color: var(--bg-dark-main);
+}
+
+.dark #fontToggle,
 .dark #themeToggle {
     background-color: var(--bg-dark-card);
 }

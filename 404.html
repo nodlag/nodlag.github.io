@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found – Javier Garrido</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="/images/me/avatar.png">
+
+    <!-- Self-contained on purpose: GitHub Pages serves this file for any missing
+         path, at any depth, so every URL here is absolute. -->
+    <style>
+        @font-face {
+            font-family: 'm5x7';
+            src: url('/fonts/m5x7.woff2') format('woff2');
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Bebas Neue';
+            src: url('/fonts/BebasNeue-Regular.woff2') format('woff2');
+            font-display: swap;
+        }
+
+        :root {
+            --bg: #f9fafb;
+            --text: #111827;
+            --muted: #4a5568;
+            --link-bg: #293c4d;
+        }
+
+        :root.dark {
+            --bg: #171717;
+            --text: #f5f5f5;
+            --muted: #a0aec0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--bg);
+            color: var(--muted);
+            font-family: 'm5x7', monospace;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--text);
+        }
+
+        p {
+            margin: 0;
+            max-width: 30rem;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            background-color: var(--link-bg);
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #5ba1eb;
+        }
+    </style>
+    <script>
+        // Same theme rule as the home page: saved preference first, system otherwise
+        (function() {
+            var saved = null;
+            try {
+                saved = localStorage.getItem('theme');
+            } catch (e) {}
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (saved === null && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <img src="/images/me/avatar.png" width="96" height="96" alt="Javier Garrido">
+    <h1>404</h1>
+    <p>This page doesn't exist.</p>
+    <a href="/">Back to the portfolio</a>
+</body>
+</html>

@@ -39,9 +39,10 @@
     <meta name="twitter:image" content="https://nodlag.github.io/images/social_card.png">
     <meta name="twitter:site" content="@nodlag">
     <meta name="twitter:creator" content="@nodlag">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Fonts are self-hosted; preload both so text does not jump when they arrive -->
+    <link rel="preload" href="fonts/m5x7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/BebasNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/styles.css">
     
@@ -58,7 +59,7 @@
         "image": "https://nodlag.github.io/images/me/avatar.png",
         "sameAs": [
             "https://www.linkedin.com/in/javier-garrido-galdón-3811b326",
-            "https://twitter.com/nodlag"
+            "https://x.com/nodlag"
         ],
         "knowsAbout": [
             "Game Development",
@@ -100,7 +101,7 @@
                     "description": "A rogue-lite slot machine nightmare. Gamble for your life in a never-ending debt simulator.",
                     "url": "https://store.steampowered.com/app/3314790/CloverPit",
                     "image": "https://nodlag.github.io/images/projects/cloverpit.jpg",
-                    "gamePlatform": ["Xbox", "PC"],
+                    "gamePlatform": ["Xbox", "PlayStation 4", "PlayStation 5", "Nintendo Switch", "Nintendo Switch 2", "PC"],
                     "contributor": {"@type": "Person", "name": "Javier Garrido"}
                 }
             },
@@ -126,7 +127,7 @@
                     "description": "A tiny building game about beautiful lived-in houses.",
                     "url": "https://store.steampowered.com/app/2533960/SUMMERHOUSE",
                     "image": "https://nodlag.github.io/images/projects/summerhouse.jpg",
-                    "gamePlatform": ["Nintendo Switch", "Xbox", "PlayStation", "PC"],
+                    "gamePlatform": ["Nintendo Switch", "Xbox", "PlayStation 5", "macOS", "PC"],
                     "contributor": {"@type": "Person", "name": "Javier Garrido"}
                 }
             },
@@ -200,37 +201,22 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 transition-colors duration-200 font-m5x7">
-    <!-- Image Viewer Modal -->
-    <div id="imageViewer" class="image-viewer-modal">
-        <div class="image-viewer-content">
-            <span class="image-viewer-close">&times;</span>
-            <img id="viewerImage" class="image-viewer-image" src="" alt="Full size image">
-            <div class="image-viewer-nav">
-                <button id="prevImage">&lt;</button>
-                <button id="nextImage">&gt;</button>
-            </div>
-            <div class="image-viewer-counter">
-                <span id="currentImageIndex">1</span> / <span id="totalImages">3</span>
-            </div>
-        </div>
-    </div>
-
     <div>
         <!-- Header -->
         <header class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-4">
-                    <img src="images/me/avatar.png" width="64" height="64" class="block rounded-full object-cover w-[48px] h-[48px] sm:w-[64px] sm:h-[64px]" alt="Javier Garrido - Game Developer Profile Photo" />
-                    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Hi! I'm Javi</h1>
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <img src="images/me/avatar.png" width="64" height="64" class="block rounded-full object-cover w-[40px] h-[40px] sm:w-[64px] sm:h-[64px]" alt="Javier Garrido - Game Developer Profile Photo" />
+                    <h1 class="text-2xl sm:text-3xl font-bold whitespace-nowrap text-gray-900 dark:text-white">Hi! I'm Javi</h1>
                 </div>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 ml-auto">
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/javier-garrido-galdón-3811b326" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="https://twitter.com/nodlag" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                        <a href="https://x.com/nodlag" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
@@ -265,7 +251,7 @@
                             <img src="images/skills/unity_engine_light.png" alt="Unity Engine logo - Game development platform" class="technology-icon block dark:hidden">
                             <img src="images/skills/unity_engine_dark.png" alt="Unity Engine logo - Game development platform" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">Unity</h3>
-                            <p class="technology-level" data-start-date="2013">+ <span class="years-experience">0</span> Years</p>
+                            <p class="technology-level" data-start-date="2013">Since 2013</p>
                         </div>
 
                         <!-- Godot Engine -->
@@ -273,7 +259,7 @@
                             <img src="images/skills/godot_engine_light.png" alt="Godot Engine logo - Open source game engine" class="technology-icon block dark:hidden">
                             <img src="images/skills/godot_engine_dark.png" alt="Godot Engine logo - Open source game engine" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">Godot Engine</h3>
-                            <p class="technology-level" data-start-date="2022">+ <span class="years-experience">0</span> Years</p>
+                            <p class="technology-level" data-start-date="2022">Since 2022</p>
                         </div>
 
                         <!-- C# -->
@@ -281,7 +267,7 @@
                             <img src="images/skills/c_sharp_light.png" alt="C# programming language logo" class="technology-icon block dark:hidden">
                             <img src="images/skills/c_sharp_dark.png" alt="C# programming language logo" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">C#</h3>
-                            <p class="technology-level" data-start-date="2009">+ <span class="years-experience">0</span> Years</p>
+                            <p class="technology-level" data-start-date="2009">Since 2009</p>
                         </div>
 
                         <!-- Game Design -->
@@ -289,7 +275,7 @@
                             <img src="images/skills/game_design_light.png" alt="Game Design icon - Game design and development skills" class="technology-icon block dark:hidden">
                             <img src="images/skills/game_design_dark.png" alt="Game Design icon - Game design and development skills" class="technology-icon hidden dark:block">
                             <h3 class="technology-name">Game Design</h3>
-                            <p class="technology-level" data-start-date="2011">+ <span class="years-experience">0</span> Years</p>
+                            <p class="technology-level" data-start-date="2011">Since 2011</p>
                         </div>
                     </div>
                 </div>
@@ -308,9 +294,16 @@
                     <!-- Portfolio Items -->
 
                     <!-- CloverPit-->
-                    <article class="project-card" onclick="toggleDetails('cloverpit')">
-                        <img src="images/projects/cloverpit.jpg" alt="CloverPit game screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/cloverpit.jpg" alt="CloverPit game screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">CloverPit</h3>
+                                <p class="project-role">XBOX port, PS4 port, PS5 port, Nintendo Switch port, Nintendo Switch 2 port</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="cloverpit"></button>
+                        </div>
+
                         <div id="cloverpit" class="project-details">
                             <div class="project-card-description">
 
@@ -318,24 +311,28 @@
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">CloverPit</h3>
                                 <p class="project-detail-description">A rogue-lite slot machine nightmare. Gamble for your life in a never-ending debt simulator!</p>
                                 <p>&nbsp;</p>
-                                <p class="project-detail-description">I handled the Xbox versions of the game, taking care of all the technical integration and platform-specific details to make it run smoothly within the Microsoft ecosystem, with the support of the original Panik Arcade team and Future Friends Games.</p>
+                                <p class="project-detail-description">I handled the console versions of the game (Xbox, PlayStation 4, PlayStation 5, Nintendo Switch and Nintendo Switch 2), taking care of all the technical integration and platform-specific details to make it run smoothly on each platform, with the support of the original Panik Arcade team and Future Friends Games.</p>
 
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/oNs3dEXHYp8?si=V9RYA-FPCZHjkddg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+                                <div class="project-video" data-video-id="oNs3dEXHYp8"></div>
+
                             </div>
                         </div>
                     </article>
 
 
                     <!-- Laika: Aged Through Blood -->
-                    <article class="project-card" onclick="toggleDetails('project_laika')">
-                        <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood - Post-apocalyptic western Metroidvania game screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/laika.jpg" alt="Laika: Aged Through Blood - Post-apocalyptic western Metroidvania game screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Laika: Aged Through Blood</h3>
+                                <p class="project-role">Nintendo Switch &amp; PS5 port</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="project_laika"></button>
+                        </div>
+
                         <div id="project_laika" class="project-details">
                             <div class="project-card-description">
 
@@ -343,23 +340,27 @@
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Laika: Aged Through Blood</h3>
                                 <p class="project-detail-description">Laika: Aged Through Blood is an action-adventure Metroidvania set in a post-apocalyptic western world. Play as Laika, a coyote mother and fierce warrior, and carve your motorbike through a land ravaged by betrayal and loss as you uncover dark secrets in the pursuit of vengeance against oppression.</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I was responsible for porting the Steam version of the game to Nintendo Switch, working closely with the original development team to technically adapt the project and tweak several mechanics to fit the specific requirements of the Nintendo Switch platform. I was also responsible for the updated PlayStation 5 version and for bringing the game to its physical PS5 release published by Super Rare Games.</p>
 
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/HHJjbt-dwNE?si=XgRpqg06nj-_Kodm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+                                <div class="project-video" data-video-id="HHJjbt-dwNE"></div>
+
                             </div>
                         </div>
                     </article>
 
                     <!-- Summerhouse -->
-                    <article class="project-card" onclick="toggleDetails('project_summerhouse')">
-                        <img src="images/projects/summerhouse.jpg" alt="Summerhouse - A tiny building game" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/summerhouse.jpg" alt="Summerhouse - A tiny building game" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Summerhouse</h3>
+                                <p class="project-role">XBOX port, PS5 port, Nintendo Switch port, Mac OS X port</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="project_summerhouse"></button>
+                        </div>
+
                         <div id="project_summerhouse" class="project-details">
                             <div class="project-card-description">
 
@@ -367,23 +368,27 @@
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Summerhouse</h3>
                                 <p class="project-detail-description">A tiny building game about beautiful lived-in houses. No rules or restrictions, just pure creativity.</p>
                                 <p>&nbsp;</p>
-                                <p class="project-detail-description">Worked alongside the game's original creator to port its unique visual style to Nintendo Switch, balancing artistic fidelity with performance constraints. Also supported the game's release on Xbox and PlayStation platforms.</p>
+                                <p class="project-detail-description">Worked alongside the game's original creator to port its unique visual style to Nintendo Switch, Xbox, PlayStation 5 and Mac, balancing artistic fidelity with performance constraints on each platform.</p>
 
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/X9hVySSu3jU?si=8JvyjoUT6gdbys4g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+                                <div class="project-video" data-video-id="X9hVySSu3jU"></div>
+
                             </div>
                         </div>
                     </article>
 
                     <!-- Beat the Beats VR -->
-                    <article class="project-card" onclick="toggleDetails('beat_the_beats_vr')">
-                        <img src="images/projects/beat_the_beats_vr.jpg" alt="Beat the Beats VR - Electric mix of rhythm and boxing game screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/beat_the_beats_vr.jpg" alt="Beat the Beats VR - Electric mix of rhythm and boxing game screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Beat the Beats VR</h3>
+                                <p class="project-role">PICO XR version &amp; DLC integration</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="beat_the_beats_vr"></button>
+                        </div>
+
                         <div id="beat_the_beats_vr" class="project-details">
                             <div class="project-card-description">
 
@@ -391,91 +396,109 @@
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Beat the Beats VR</h3>
-                                <p class="project-detail-description"> Beat the Beats is an electric mix of rhythm and boxing game! Use actual boxing-style punches to pound your way through musical arcade levels in hypnotic VR. Get pumped, get moving and beat the beats!</p>
+                                <p class="project-detail-description">Beat the Beats is an electric mix of rhythm and boxing game! Use actual boxing-style punches to pound your way through musical arcade levels in hypnotic VR. Get pumped, get moving and beat the beats!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">Led development of the VR version for PICO XR, and implemented the technical side of DLC monetization for both PICO and Meta Quest.</p>
 
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/2JlHMrUqN1c?si=yywQ-lGjPZcwktlK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+                                <div class="project-video" data-video-id="2JlHMrUqN1c"></div>
+
                             </div>
                         </div>
                     </article>
 
                     <!-- Friends vs Friends -->
-                     <article class="project-card" onclick="toggleDetails('project_friends_vs_friends')">
-                        <img src="images/projects/friends_vs_friends.jpg" alt="Friends vs Friends - Online PvP shooter with deck building gameplay screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/friends_vs_friends.jpg" alt="Friends vs Friends - Online PvP shooter with deck building gameplay screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Friends vs Friends</h3>
+                                <p class="project-role">Console optimization</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="project_friends_vs_friends"></button>
+                        </div>
+
                         <div id="project_friends_vs_friends" class="project-details">
                             <div class="project-card-description">
-                                
+
                                 <a href="https://store.steampowered.com/app/1785150/Friends_vs_Friends" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Friends vs Friends</h3>
                                 <p class="project-detail-description">A frantic, online PvP shooter that combines combat and deck building. Choose a character, customize your card-based loadout, and get ready for the fights of your life!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">Partnering with the original developers and the console porting team, I helped refine and optimize the project to achieve a more fluid and responsive experience on PlayStation and Xbox.</p>
-                                
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/dVxCC6STMbo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+
+                                <div class="project-video" data-video-id="dVxCC6STMbo"></div>
+
                             </div>
                         </div>
                     </article>
 
                     <!-- Tiny Garden -->
-                    <article class="project-card" onclick="toggleDetails('project_tiny_garden')">
-                        <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden - Relaxing farming and puzzle game with magical toy garden screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/tiny_garden.jpg" alt="Tiny Garden - Relaxing farming and puzzle game with magical toy garden screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Tiny Garden</h3>
+                                <p class="project-role">Technical Artist: VFX &amp; animation</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="project_tiny_garden"></button>
+                        </div>
+
                         <div id="project_tiny_garden" class="project-details">
                             <div class="project-card-description">
-                                
+
                                 <a href="https://store.steampowered.com/app/2812450/Tiny_Garden" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Tiny Garden</h3>
                                 <p class="project-detail-description">Tiny Garden lets you grow a pocket-sized garden inside a magical toy passed down through generations. Nurture plants, trade them for furniture, and customize your space in this relaxing mix of farming, puzzles, and strategy. No scores or time limits — let your creativity bloom!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I served as the Technical Artist for the game, where I designed and implemented all VFX and animations, blending technical execution with creative vision to enrich the game's atmosphere.</p>
-                                
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/yVig9KKjK10?si=4W47JYVZy4QNqe4N" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+
+                                <div class="project-video" data-video-id="yVig9KKjK10"></div>
+
                             </div>
                         </div>
                     </article>
 
                     <!-- Die or Die -->
-                    <article class="project-card" onclick="toggleDetails('project_die_or_die')">
-                        <img src="images/projects/die_or_die.jpg" alt="Die or Die - Top-down shooter roguelite with dice mechanics gameplay screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/die_or_die.jpg" alt="Die or Die - Top-down shooter roguelite with dice mechanics gameplay screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Die or Die</h3>
+                                <p class="project-role">Prototype &amp; game feel</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="project_die_or_die"></button>
+                        </div>
+
                         <div id="project_die_or_die" class="project-details">
                             <div class="project-card-description">
-                                
+
                                 <a href="https://store.steampowered.com/app/3842190/Die_or_Die" class="steam-link" target="_blank" rel="noopener noreferrer">
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Die or Die</h3>
                                 <p class="project-detail-description">Roll the dice and choose how you will die. Die or Die is a top-down shooter roguelite where you run, shoot and dodge enemies to get dice with which to disable threats or unlock abilities. Roll. Die. Repeat.</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I led the creation of the initial prototype and collaborated during production to refine the game feel and ensure the project met its technical goals.</p>
-                                
+
                             </div>
                         </div>
                     </article>
 
                     <!-- Cannibal Crossing -->
-                    <article class="project-card" onclick="toggleDetails('project_cannibal_crossing')">
-                        <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing - Action-survival game with base building and co-op mode screenshot" loading="lazy" width="460" height="215">
-                        
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="images/projects/cannibal_crossing.jpg" alt="Cannibal Crossing - Action-survival game with base building and co-op mode screenshot" loading="lazy" width="460" height="215">
+                            <div class="project-summary">
+                                <h3 class="project-title">Cannibal Crossing</h3>
+                                <p class="project-role">Design, programming &amp; VFX</p>
+                            </div>
+                            <button type="button" class="project-toggle" aria-expanded="false" aria-controls="project_cannibal_crossing"></button>
+                        </div>
+
                         <div id="project_cannibal_crossing" class="project-details">
                             <div class="project-card-description">
 
@@ -483,15 +506,12 @@
                                     View on Steam
                                 </a>
 
-                                <h3 class="project-title">Cannibal Crossing</h3>
                                 <p class="project-detail-description">Cannibal Crossing is an action-survival game where you explore the randomly generated town of Earlsboro while scavenging, fighting hordes of enemies, building a base, and searching for a way to escape! Meet survivors with new abilities and lots of cannibals. Includes a co-op mode for 1-4 players!</p>
                                 <p>&nbsp;</p>
                                 <p class="project-detail-description">I was involved in the original development of the game, playing a hands-on role in core areas like design, programming, feel, and VFX, helping shape the game's identity from the ground up.</p>
-                                
-                                <div class="project-video">
-                                    <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/_JycN5zJCM0?si=5wFbGny4iKiwn1eA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                
+
+                                <div class="project-video" data-video-id="_JycN5zJCM0"></div>
+
                             </div>
                         </div>
                     </article>
@@ -524,6 +544,8 @@
                     src="images/me/me-november-2025.jpg"
                     alt="Javier Garrido in November 2025"
                     loading="lazy"
+                    width="888"
+                    height="1185"
                     class="mx-auto h-auto w-4/5 md:w-1/2 lg:w-[30%] max-w-full cursor-zoom-in rounded-lg shadow-lg"
                 >
                 <figcaption class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">Probably compiling something right now.</figcaption>
@@ -543,51 +565,72 @@
         <img
             src="images/me/me-november-2025.jpg"
             alt="Javier Garrido in November 2025"
+            loading="lazy"
             class="max-h-[90vh] w-auto rounded-lg shadow-2xl"
         >
     </div>
 
     <footer class="py-4 text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; <span id="footerYear"></span></p>
+        <p>&copy; <span id="footerYear"></span> Javier Garrido</p>
     </footer>
 
     <script>
-        // Theme detection and toggle
-        const themeToggle = document.getElementById('themeToggle');
-        
-        // Check for saved theme preference or use system preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
+        // localStorage can throw (blocked cookies, some in-app browsers).
+        // Preferences are optional, so never let that break the rest of the page.
+        function readPref(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch (e) {
+                return null;
+            }
         }
 
-        // Theme toggle functionality
-        themeToggle.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
+        function savePref(key, value) {
+            try {
+                localStorage.setItem(key, value);
+            } catch (e) {
+                // The preference just won't persist
             }
+        }
+
+        // Theme: saved preference first, system preference otherwise
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = readPref('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', savedTheme === 'dark' || (savedTheme === null && prefersDark));
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            savePref('theme', isDark ? 'dark' : 'light');
         });
 
         // Font toggle functionality
         const fontToggle = document.getElementById('fontToggle');
-        
+
+        // Each letter gets its own animated span, grouped per word so that
+        // a title can only wrap between words, never in the middle of one.
         function wrapLettersInSpans(element) {
-            const text = element.textContent;
+            const text = element.textContent.trim();
+            element.dataset.titleText = text;
             element.textContent = '';
-            for (let i = 0; i < text.length; i++) {
-                const span = document.createElement('span');
-                span.textContent = text[i];
-                if (text[i] === ' ') {
-                    span.style.marginRight = '0.25em';
+            let letterIndex = 0;
+            text.split(/\s+/).forEach((word, wordIndex) => {
+                if (wordIndex > 0) {
+                    element.appendChild(document.createTextNode(' '));
+                    letterIndex++;
                 }
-                span.style.animationDelay = `${i * 0.05}s`;
-                element.appendChild(span);
-            }
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'title-word';
+                for (const letter of word) {
+                    const letterSpan = document.createElement('span');
+                    letterSpan.className = 'title-letter';
+                    letterSpan.textContent = letter;
+                    letterSpan.style.animationDelay = `${letterIndex * 0.05}s`;
+                    wordSpan.appendChild(letterSpan);
+                    letterIndex++;
+                }
+                element.appendChild(wordSpan);
+            });
         }
 
         function updateTitleFonts() {
@@ -603,122 +646,66 @@
                 titles.forEach(title => {
                     if (title.classList.contains('animated-title')) {
                         title.classList.remove('animated-title');
-                        const text = Array.from(title.childNodes)
-                            .map(node => node.textContent)
-                            .join('');
-                        title.textContent = text;
+                        title.textContent = title.dataset.titleText;
                     }
                 });
             }
         }
-        
-        // Check for saved font preference
-        if (localStorage.font === 'default' || (!('font' in localStorage) && !document.body.classList.contains('font-m5x7'))) {
+
+        // Saved font preference; without one, the class on <body> decides
+        const savedFont = readPref('font');
+        if (savedFont === 'default') {
             document.body.classList.remove('font-m5x7');
-        } else {
+        } else if (savedFont === 'm5x7') {
             document.body.classList.add('font-m5x7');
         }
         updateTitleFonts();
 
-        // Font toggle functionality
         fontToggle.addEventListener('click', () => {
-            if (document.body.classList.contains('font-m5x7')) {
-                document.body.classList.remove('font-m5x7');
-                localStorage.font = 'default';
-            } else {
-                document.body.classList.add('font-m5x7');
-                localStorage.font = 'm5x7';
-            }
+            const isPixel = document.body.classList.toggle('font-m5x7');
+            savePref('font', isPixel ? 'm5x7' : 'default');
             updateTitleFonts();
         });
 
-        // Project details toggle
-        function toggleDetails(projectId) {
-            const details = document.getElementById(projectId);
-            details.classList.toggle('active');
-        }
+        // Project cards: the header button expands/collapses the details.
+        // The YouTube player only exists while a card is open, so nothing is
+        // downloaded from YouTube until someone asks for a trailer.
+        document.querySelectorAll('.project-card').forEach(card => {
+            const toggle = card.querySelector('.project-toggle');
+            const video = card.querySelector('.project-video[data-video-id]');
+            const title = card.querySelector('.project-title').textContent.trim();
+            if (!toggle) return;
 
-        // Image Viewer functionality
-        let currentProject = null;
-        let currentImageIndex = 0;
-        let currentImages = [];
+            toggle.setAttribute('aria-label', `${title}: project details`);
 
-        function openImageViewer(img, projectId) {
-            event.stopPropagation(); // Prevent project details from toggling
-            currentProject = projectId;
-            const gallery = document.querySelector(`.project-gallery[data-project="${projectId}"]`);
-            currentImages = Array.from(gallery.getElementsByTagName('img'));
-            currentImageIndex = currentImages.indexOf(img);
-            
-            updateImageViewer();
-            document.getElementById('imageViewer').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+            toggle.addEventListener('click', () => {
+                const open = card.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', String(open));
+                if (!video) return;
 
-        function updateImageViewer() {
-            const viewer = document.getElementById('imageViewer');
-            const viewerImage = document.getElementById('viewerImage');
-            const currentIndex = document.getElementById('currentImageIndex');
-            const totalImages = document.getElementById('totalImages');
-            
-            viewerImage.src = currentImages[currentImageIndex].src;
-            currentIndex.textContent = currentImageIndex + 1;
-            totalImages.textContent = currentImages.length;
-        }
-
-        function closeImageViewer() {
-            document.getElementById('imageViewer').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function navigateImage(direction) {
-            currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
-            updateImageViewer();
-        }
-
-        // Event Listeners
-        document.querySelector('.image-viewer-close').addEventListener('click', closeImageViewer);
-        document.getElementById('prevImage').addEventListener('click', () => navigateImage(-1));
-        document.getElementById('nextImage').addEventListener('click', () => navigateImage(1));
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!document.getElementById('imageViewer').classList.contains('active')) return;
-            
-            switch(e.key) {
-                case 'Escape':
-                    closeImageViewer();
-                    break;
-                case 'ArrowLeft':
-                    navigateImage(-1);
-                    break;
-                case 'ArrowRight':
-                    navigateImage(1);
-                    break;
-            }
-        });
-
-        // Close on click outside image
-        document.getElementById('imageViewer').addEventListener('click', (e) => {
-            if (e.target.id === 'imageViewer') {
-                closeImageViewer();
-            }
-        });
-
-        // Calculate years of experience
-        function updateYearsOfExperience() {
-            const currentYear = new Date().getFullYear();
-            const technologyLevels = document.querySelectorAll('.technology-level');
-            
-            technologyLevels.forEach(level => {
-                const startDate = parseInt(level.getAttribute('data-start-date'));
-                const yearsExperience = currentYear - startDate;
-                level.querySelector('.years-experience').textContent = yearsExperience;
+                if (!open) {
+                    video.replaceChildren(); // also stops playback
+                } else if (!video.firstElementChild) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube-nocookie.com/embed/${video.dataset.videoId}`;
+                    iframe.title = `${title} trailer`;
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    iframe.allowFullscreen = true;
+                    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                    video.appendChild(iframe);
+                }
             });
-        }
+        });
 
-        // Call the function when the page loads
-        document.addEventListener('DOMContentLoaded', updateYearsOfExperience);
+        // Years of experience, computed from data-start-date.
+        // The markup carries a "Since <year>" fallback for when this never runs.
+        const currentYear = new Date().getFullYear();
+        document.querySelectorAll('.technology-level[data-start-date]').forEach(level => {
+            const startYear = parseInt(level.dataset.startDate, 10);
+            if (!Number.isNaN(startYear)) {
+                level.textContent = `+ ${currentYear - startYear} Years`;
+            }
+        });
 
         // Simple modal for "Just Me" photo
         (function() {
@@ -743,6 +730,9 @@
             closeBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) closeModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
             });
         })();
 

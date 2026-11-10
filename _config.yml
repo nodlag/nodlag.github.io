@@ -1,0 +1,6 @@
+# GitHub Pages builds this repo with Jekyll. Keep development-only files out of
+# the published site (without this, CLAUDE.md is rendered and served as /CLAUDE.html).
+exclude:
+  - CLAUDE.md
+  - tailwind.config.js
+  - tailwind.input.css
